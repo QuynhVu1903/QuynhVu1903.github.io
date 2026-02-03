@@ -1,0 +1,256 @@
+/* === RESET === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === BODY === */
+body {
+  font-family: "Cambria", Georgia, serif;
+  background-color: #FFF8F0; /* Nền cam sữa nhẹ */
+  color: #4A3B2C;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === HEADER === */
+header {
+  text-align: center;
+  background: url("../img/BackGroundmenu.png") center/cover no-repeat;
+  width: 100%;
+  padding: 1.5rem 0;
+}
+
+header img {
+  height: 140px;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #1A5632;
+  margin: 0;
+  font-weight: bold;
+  line-height: 1.2;
+  text-shadow:
+    -2px -2px 3px #fff,
+     2px -2px 3px #fff,
+    -2px  2px 3px #fff,
+     2px  2px 3px #fff; /* ✅ tạo viền sáng trắng nhẹ */
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #6A4A31;
+  font-style: italic;
+}
+
+/* === MAIN === */
+main {
+  max-width: 900px;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+/* === INTRO BOX === */
+.intro-box {
+  background-color: #FFE6CC; /* Cam nhạt ấm */
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.intro-text {
+  flex: 1 1 55%;
+  min-width: 260px;
+}
+
+.intro-text h2 {
+  color: #D47500;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.intro-text p {
+  text-align: justify;
+  font-size: 1.1rem;
+  color: #4A3B2C;
+}
+
+.intro-img {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.intro-img img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* === HISTORY === */
+.history {
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.history h3 {
+  color: #D47500;
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.history p {
+  text-align: justify;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* === FUN FACTS === */
+.fun-facts {
+  background-color: #FFF5E5;
+  border-left: 6px solid #D47500;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.fun-facts h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #D47500;
+  text-align: center;
+}
+
+.fun-facts ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.fun-facts li {
+  margin-bottom: 0.6rem;
+  position: relative;
+  color: #4A3B2C;
+}
+
+.fun-facts li::before {
+  content: "🥕 ";
+  position: absolute;
+  left: -1.2rem;
+}
+
+/* === RECIPE === */
+.recipe {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom: 3rem;
+}
+
+.recipe h3 {
+  text-align: center;
+  color: #D47500;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.recipe ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.recipe li {
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.recipe p {
+  text-align: justify;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+/* === VIDEO === */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 1.5rem auto;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* === BACK BUTTON === */
+.back-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #D47500;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #A95800;
+}
+#clock {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  background-color: rgba(26, 86, 50, 0.85);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2000;
+}
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .intro-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-img img {
+    max-width: 280px;
+    margin-top: 1rem;
+  }
+
+  .fun-facts, .recipe, .history {
+    padding: 1rem;
+  }
+}
