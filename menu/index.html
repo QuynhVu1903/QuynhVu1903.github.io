@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
 </head>
 
 <body>
-    <div class="containerMother">
-        <div class="menu">
-            <nav class="container">
-
+    <div class="menu">
+        <div class="container">
+            <div class="logoImage">
                 <a href="" id="logo">
                     <img src="img/cat.png" alt="logo-Html">
                 </a>
-
-                <ul class="subMenu">
+            </div>
+            <div class="divMenu">
+                <ul class="mainMenu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a>
                         <ul class="subMenu">
@@ -50,11 +51,16 @@
 
 
                 </ul>
-
-            </nav>
+            </div>
+            <div class="search">
+                <input type="text" id="text" placeholder="Search">
+                <div class="icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
         </div>
-        <div class="main"></div>
     </div>
+
 </body>
 
 </html>
