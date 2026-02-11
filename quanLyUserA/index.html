@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="textlogo">    
+                <div class="text">
+                    <p>LOGIN WEB</p>
+                </div>
+            </div>
+            <div class="signUp">
+                <div class="globe"><i class="fa-solid fa-globe"></i></div>
+                <div class="sign">
+                    <a href="#">Sign up</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="box">
+                <div class="logo">
+                    <i class="fa-solid fa-paw"></i>
+                </div>
+                <div class="title">
+                    <h1>Agent Login</h1>
+                    <p>Hey, Enter your details to get sign in to your account</p>
+                </div>
+                <div class="information">
+                    <input type="email" id="email" placeholder="Enter Email"><br>
+                    <input type="password" id="password" placeholder="Password">
+                    <p id="pOutput">Having trouble in sign in?</p><br>
+                    <button id="signIn" onclick="signIn();">Sign in</button><br>
+                    <p>- Or Sign in with -</p>
+                </div>
+                <div class="3SignMethod">
+                    <!-- tạo flex cho 3 method -->
+                    <button class="3button" onclick="google();"><i class="fa-brands fa-google"></i> Google</button>
+                    <button class="3button" onclick="apple();"><i class="fa-brands fa-apple"></i> Apple ID</button>
+                    <button class="3button" onclick="facebook();"><i class="fa-brands fa-facebook"></i>
+                        Facebook</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            &copy; 2026 Sign in box | Privacy Policy
+        </div>
+    </div>
+</body>
+
+</html>

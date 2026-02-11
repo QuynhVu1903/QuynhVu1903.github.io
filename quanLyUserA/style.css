@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap');
+
+body {
+    background-color: rgb(234, 222, 206);
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0px auto;
+    /* background-color: rgb(247, 223, 194);
+    font-weight: bold; */
+    font-family: Arial, Helvetica, sans-serif;
+    height: 65px;
+}
+
+.textlogo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 70px;
+    margin-top: 50px;
+}
+
+
+
+.text {
+    border-bottom: 1px solid black;
+}
+
+.text>p {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+}
+.signUp {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+.sign {
+    margin-right: 70px;
+}
+.sign > a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.main {
+    display: flex;
+    justify-content: center;
+}
+.box {
+    position: relative;
+    width: 350px;
+    padding: 60px 30px 30px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+}
+.logo {
+    position: absolute;
+    top: -20px; /*để avt trên box*/
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    max-width: 55px;
+    height: auto;
+    border-radius: 80px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo i {
+    color: white;
+    font-size: 35px;
+}
