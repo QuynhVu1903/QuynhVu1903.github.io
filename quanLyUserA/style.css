@@ -1,82 +1,228 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap');
 
-body {
+html, body {
     background-color: rgb(234, 222, 206);
     margin: 0;
+    height: 100%;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* mainBody bọc header và main */
+.mainBody {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+/* SỬA CÁI HEADER NÀY */
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     max-width: 100%;
     margin: 0px auto;
-    /* background-color: rgb(247, 223, 194);
-    font-weight: bold; */
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     height: 65px;
+    gap: 30px;
+    
 }
 
 .textlogo {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-left: 70px;
+    gap: 3px;
+    /* margin-right: 70px; */
     margin-top: 50px;
+    
 }
-
-
-
-.text {
-    border-bottom: 1px solid black;
-}
+/* .text {
+    border-bottom: 1px  black;
+} */
 
 .text>p {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
 }
+
 .signUp {
     display: flex;
-    align-items: center;
-    gap: 30px;
+    flex-direction: row;
+    justify-content: space-around;
+    /* align-items: center; */
     margin-top: 50px;
+    gap: 3px;
 }
+
 .sign {
-    margin-right: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 3px;
 }
-.sign > a {
+.aSignUp {
+    display: flex;
+    align-items: center;
+}
+.aSignUp > a {
     text-decoration: none;
     color: black;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+ 
 }
+.aSignUp > a:hover {
+    font-weight: bold;
+}
+.title>h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+}
+
+.title > p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+#pOutput {
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.information{
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+}
+
+.information p {
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.information input{
+    padding: 5px 10px;
+}
+
+input {
+    /* flex: 1;
+    width: 100%; */
+    margin-bottom: 10px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}
+
+
+
+#signIn {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(226, 185, 111);
+    border-radius: 5px;
+    border: 1px solid rgb(226, 185, 111);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+#signIn:hover {
+    background-color: rgb(217, 154, 38);
+    font-weight: 800;
+    cursor: pointer;
+
+}
+
+
+
+
 .main {
     display: flex;
     justify-content: center;
+    margin-top: 100px;
+}
+.baSignMethod {
+    display: flex;
+    gap: 5px;
+    width: 350px;
+    
+}
+.baButton {
+    width: 110px;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+.baButton:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+}
+.fa-google {
+    font-size: 18px;
+}
+.google {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+.apple {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.facebook {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.fa-apple {
+    font-size: 22px;
+}
+.fa-facebook {
+    font-size: 20px;
 }
 .box {
+
     position: relative;
     width: 350px;
     padding: 60px 30px 30px;
     background: white;
     border-radius: 15px;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    box-shadow: 5px 5px 10px gray;
 }
-.logo {
+
+img {
     position: absolute;
-    top: -20px; /*để avt trên box*/
+    top: -30px;
+    /*để avt trên box*/
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
     height: 100px;
-    max-width: 55px;
+    max-width: 60px;
     height: auto;
-    border-radius: 80px;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 80%;
 }
-.logo i {
-    color: white;
-    font-size: 35px;
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
