@@ -1,0 +1,68 @@
+html, body {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 100px;
+    gap: 10px;
+}
+.box1 {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+.box1 > div {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.box1List > button {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    border-color: rgb(111, 147, 226);
+    background-color:  rgb(111, 147, 226);
+    border-style: none;
+    padding: 10px 10px;
+}
+.box1List > button:hover {
+    background-color: rgb(103, 134, 218);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.box1List > input {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    height: 25px;
+    width: 238px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+.box2 {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.h2Box {
+    background-color:rgb(174, 192, 209)
+}
+.h2Box > h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+.listBox {
+    border: 1px solid black;
+    height: 300px;
+    width: 400px;
+}

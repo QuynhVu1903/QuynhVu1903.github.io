@@ -11,69 +11,108 @@
 </head>
 
 <body>
-    <!-- <div class="container"> -->
-    <div class="mainBody">
-        <div class="header">
-            <div class="textlogo">
-                <div class="text">
-                    <p>LOGIN WEB</p>
-                </div>
+    <div class="container">
+        <!-- LOGIN -->
+        <div id="loginForm">
+            <div class="header">
+                <div class="textlogo">
+                    <div class="text">
+                        <p>LOGIN WEB</p>
+                    </div>
 
+                </div>
+                <div class="signUp">
+                    <div class="sign">
+                        <!-- <div class="globe"><i class="fa-solid fa-globe"></i></div> -->
+                        <div class="buttonSignUp"><button id="showSignup" onclick="showSignup()">Sign up</button></div>
+                    </div>
+                </div>
             </div>
-            <div class="signUp">
-                <div class="sign">
-                    <div class="globe"><i class="fa-solid fa-globe"></i></div>
-                    <div class="aSignUp"><a href="#">Sign up</a></div>
+            <div class="main">
+                <div class="box">
+                    <div class="logo">
+                        <img id="imgLogo" src="./img/OIP.webp" alt="cat">
+                    </div>
+                    <div class="title">
+                        <h1>Agent Login</h1>
+                        <p>Hey, Enter your details to get sign in to your account</p>
+                    </div>
+                    <div class="information">
+                        <input type="email" name="email" id="email" placeholder="Enter Email"><br>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                        <p id="pOutput">Having trouble in sign in?</p><br>
+                        <button id="signIn" onclick="signIn()">Sign in</button><br>
+                        <p>— Or Sign in with —</p>
+                    </div>
+                    <div class="baSignMethod">
+                        <!-- tạo flex cho 3 method -->
+                        <button class="baButton" onclick="google()">
+                            <div class="google">
+                                <div><i class="fa-brands fa-google"></i></div>
+                                <div> Google </div>
+                            </div>
+                        </button>
+
+                        <button class="baButton" onclick="apple()">
+                            <div class="apple">
+                                <div><i class="fa-brands fa-apple"></i></div>
+                                <div> Apple ID</div>
+                            </div>
+                        </button>
+
+                        <button class="baButton" onclick="facebook();">
+                            <div class="facebook">
+                                <div><i class="fa-brands fa-facebook"></i></div>
+                                <div>Facebook</div>
+                            </div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="main">
-            <div class="box">
-                <div class="logo">
-                    <img src="./img/OIP.webp" alt="cat">
-                </div>
-                <div class="title">
-                    <h1>Agent Login</h1>
-                    <p>Hey, Enter your details to get sign in to your account</p>
-                </div>
-                <div class="information">
-                    <input type="email" name="email" placeholder="Enter Email"><br>
-                    <input type="password" name="password" placeholder="Password">
-                    <p id="pOutput">Having trouble in sign in?</p><br>
-                    <button id="signIn" onclick="signIn();">Sign in</button><br>
-                    <p>— Or Sign in with —</p>
-                </div>
-                <div class="baSignMethod">
-                    <!-- tạo flex cho 3 method -->
-                    <button class="baButton" onclick="google();">
-                        <div class="google">
-                            <div><i class="fa-brands fa-google"></i></div>
-                            <div> Google </div>
-                    </div>
-                    </button>
-                
-                <button class="baButton" onclick="apple();">
-                    <div class="apple">
-                        <div><i class="fa-brands fa-apple"></i></div>
-                        <div> Apple ID</div>
-                    </div>
-                </button>
 
-                <button class="baButton" onclick="facebook();">
-                    <div class="facebook">
-                    <div><i class="fa-brands fa-facebook"></i></div>
-                    <div>Facebook</div>
+        <!-- SIGN UP -->
+        <div id="signupBox">
+            <div id="signupForm">
+                <div class="left">
+                    <img src="./img/vit.png" class="desktop">
                 </div>
-            </button>
+
+                <div class="right">
+
+                    <h1>Save Your Account Now !</h1>
+                    <div class="form-wrapper">
+                        <div class="form-right">
+                            <img src="./img/vitNho1.jpg" class="mobile">
+                        </div>
+                        <div class="form-left">
+                            <div class="form-leftChild">
+                            <div><input id="first" type="text" placeholder="First name"></div>
+                            <div><input id="last" type="text" placeholder="Last name"></div>
+                            </div>
+                            <input id="emailSignUp" type="email" placeholder="Email">
+                            <input id="passwordSignUp" type="password" placeholder="Password">
+                            <button onclick="register()">Register</button>
+                        </div>
+
+
+                    </div>
+                    <p>Already have an account?
+                        <a href="#" onclick="showLogin()">Login</a>
+                    </p>
+                </div>
+
+
             </div>
         </div>
-    </div>
-    </div>
-    <div class="footer">
-        &copy; 2026 Sign In Box | Privacy Policy
+
+        <div class="footer">
+            &copy; 2026 Sign In Box | Privacy Policy
+        </div>
+        <!-- KẾT THÚC CONTAINER -->
     </div>
     <script src="./index.js"></script>
-    <!-- </div> -->
+
 </body>
 
 </html>
