@@ -156,28 +156,3 @@ function register() {
     }    
 
 }
-function check2 (key, firstLastName, email){
-	for(let i = 0; i < )
-} 
-function danhSach() {
-	let key = document.getElementById("list").value;
-	let firstLastName = users.first_name + users.last_name;
-	let email = users.email;
-	if(key !== null) {
-        let result = check1 (emailSignUp);
-        if(result){
-            alert(result);
-        }
-        else {
-			users.push(a);
-            greeting = "Tạo tài khoản thành công: id: " + a.id + ", first_name: " + a.first_name + ", last_name: " 
-			+ a.last_name + ", email: " + a.emailSignUp + ", password: "  + a.passwordSignUp;
-            alert(greeting);
-        }
-    }
-    else {
-        
-        let greeting = "Hãy nhập đầy đủ thông tin";
-        alert(greeting);
-    }    
-}
