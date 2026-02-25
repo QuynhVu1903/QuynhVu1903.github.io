@@ -144,8 +144,8 @@ function register() {
         }
         else {
 			users.push(a);
-            greeting = "Tạo tài khoản thành công: id: " + a.id + ", first_name: " + a.first_name + ", last_name: " 
-			+ a.last_name + ", email: " + a.emailSignUp + ", password: "  + a.passwordSignUp;
+            greeting = "Tạo tài khoản thành công: id: " + users[users.length-1].id + ", first_name: " + users[users.length-1].first_name + ", last_name: " 
+			+ users[users.length-1].last_name + ", email: " + users[users.length-1].email + ", password: "  + users[users.length-1].password;
             alert(greeting);
         }
     }
