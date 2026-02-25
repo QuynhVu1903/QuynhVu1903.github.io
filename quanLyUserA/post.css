@@ -29,13 +29,13 @@ html, body {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     border-radius: 5px;
-    border-color: rgb(111, 147, 226);
-    background-color:  rgb(111, 147, 226);
+    border-color:bisque;
+    background-color:  bisque;
     border-style: none;
     padding: 10px 10px;
 }
 .box1List > button:hover {
-    background-color: rgb(87, 110, 172);
+    background-color: rgb(216, 160, 91);
     font-weight: bold;
     cursor: pointer;
 }
@@ -54,14 +54,14 @@ html, body {
     gap: 2px;
 }
 .h2Box {
-    background-color:rgb(174, 192, 209)
+    background-color:bisque;
 }
 .h2Box > h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 20px;
 }
-/* .listBox {
+.listBox {
     border: 1px solid black;
     height: 300px;
     width: 400px;
@@ -73,9 +73,9 @@ html, body {
     max-height: 270px;
     overflow-y: auto;
     word-break: break-word;
-     xuống dòng khi cần 
+    /* xuống dòng khi cần */
     overflow-wrap: break-word;
-    /* hỗ trợ thêm 
+    /* hỗ trợ thêm */
     white-space: normal;
-    cho phép xuống dòng 
-} */
+    /* cho phép xuống dòng */
+}
