@@ -12,20 +12,20 @@
     <div class="container">
         <div class="box1">
             <div class="box1Nhap">
-            <label for="list">Nhập ID</label><br>
+                <label for="list">Nhập ID</label><br>
             </div>
             <div class="box1List">
-            <input type="text" name="list" id="list">
-            <button onclick="chiTiet()">Hiển thị chi tiết</button>
-        </div>
+                <input type="text" name="list" id="idOnly">
+                <button onclick="chiTiet()">Hiển thị chi tiết</button>
+            </div>
         </div>
         <div class="box2">
             <div class="h2Box">
-                <h2>Danh sách các User</h2>
+                <h2>Danh sách các Post</h2>
             </div>
-            <div class="listBox">
-                <p id="pOutput"></p>
-            </div>
+
+            <div id="table-container"></div>
+
         </div>
         <div class="box3">
             <button onclick="listPost()">Hiển thị danh sách Post</button>
@@ -35,3 +35,21 @@
 </body>
 
 </html>
+
+
+
+
+<!-- <div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Nội dung</th>
+            </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+    </table>
+</div> -->
