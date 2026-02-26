@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     display: flex;
     justify-content: center;
     height: 100%;
@@ -12,35 +13,39 @@ html, body {
     flex-direction: column;
     text-align: center;
     margin-top: 100px;
-    gap: 10px;
+    gap: 20px;
 }
+
 .box1 {
     display: flex;
     flex-direction: column;
-    text-align: start;
+    text-align: center;
+    gap: 10px;
 }
-.box1 > div {
+
+.box1>div {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
 
-.box1List > button {
+.box1List>button {
     color: black;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     border-radius: 5px;
-    border-color:bisque;
-    background-color:  bisque;
+    border-color: rgb(111, 147, 226);
+    background-color: rgb(111, 147, 226);
     border-style: none;
     padding: 10px 10px;
 }
-.box1List > button:hover {
-    background-color: rgb(216, 160, 91);
+
+.box1List>button:hover {
+    background-color: rgb(87, 110, 172);
     font-weight: bold;
     cursor: pointer;
 }
 
-.box1List > input {
+.box1List>input {
     padding: 5px 10px;
     margin-bottom: 10px;
     height: 25px;
@@ -48,34 +53,119 @@ html, body {
     border-radius: 5px;
     border: 1px solid;
 }
+
 .box2 {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 20px;
 }
-.h2Box {
-    background-color:bisque;
-}
-.h2Box > h2 {
+
+.h2Box>h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 20px;
 }
-.listBox {
-    border: 1px solid black;
-    height: 300px;
-    width: 400px;
-    text-align: justify;
-    padding: 10px;
-    padding-left: 20px;
-}
-#pOutput {
-    max-height: 270px;
+
+#table-container {
+    width: 1000px;
+    margin: auto;
+    max-height: 500px;
     overflow-y: auto;
-    word-break: break-word;
-    /* xuống dòng khi cần */
-    overflow-wrap: break-word;
-    /* hỗ trợ thêm */
-    white-space: normal;
-    /* cho phép xuống dòng */
+}
+
+table {
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    background-color: white;
+
+    /* box-shadow: 0 8px 20px black; */
+    border: black;
+
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+}
+
+thead {
+    background: linear-gradient(90deg, #6283e4, #4c7c6a);
+    color: white;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: 0.2s;
+}
+
+tbody tr:hover {
+    background: #f2f6ff;
+}
+
+/* màu cho dòng chẵn khác với dòng lẻ */
+tbody tr:nth-child(even) {
+    background: #fafafa;
+}
+
+#toolTip {
+    position: relative;
+    cursor: pointer;
+
+}
+#toolTipText {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: #fff;
+    white-space: nowrap;
+    padding: 10px 15px;
+    border-radius: 7px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#toolTipText::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border: 15px solid;
+    border-color: #000 #0000 #0000 #0000;
+}
+#toolTip:hover #toolTipText {
+    top: -130%;
+    visibility: visible;
+    opacity: 1;
+}
+.box3 {
+    margin: 20px;
+}
+.box3>button {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    border-color: rgb(111, 147, 226);
+    background-color: rgb(111, 147, 226);
+    border-style: none;
+    padding: 10px 10px;
+}
+
+.box3>button:hover {
+    background-color: rgb(87, 110, 172);
+    font-weight: bold;
+    cursor: pointer;
 }
