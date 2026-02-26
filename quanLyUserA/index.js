@@ -1,5 +1,6 @@
 // USERS
 
+
 let users = [
 	{
 		id: 1,
@@ -661,7 +662,7 @@ function register() {
 }
 
 function danhSach() {
-	let key = document.getElementById("list").value.trim();
+	let key = document.getElementById("list").value.trim().toLowerCase();
 	let html = `
 <table>
   <thead>
@@ -673,54 +674,131 @@ function danhSach() {
   </thead>
   <tbody>
 `;
-
-	if (key !== null) {
-
-		let keyword = key.toLowerCase().split("");
-
-		for (let i = 0; i < users.length; i++) {
-
-			let word = (users[i].first_name + " " + users[i].last_name + " " + users[i].email);
-			word = word.toLowerCase().split("");
-			// Ví dụ sẽ thành:
-			// LorileeAdameladame0@guardian.co.uk
-			// Trong khi đề yêu cầu tìm trong "họ và tên", nghĩa là phải có khoảng trắng
-
-			for (let j = 0; j <= word.length - keyword.length; j++) {
-
-				let match = true;
-
-				for (let k = 0; k < keyword.length; k++) {
-					if (word[j + k] !== keyword[k]) {
-						match = false;
-						break;
-					}
-				}
-
-				if (match) {
-						html += `
-    <tr>
-      <td>${users[i].id}</td>
-      <td>${users[i].last_name} + " " + ${users[i].first_name}</td>
-	  <td>${users[i].email}</td>
-    </tr>
-  `;
-					break; // tránh in trùng
-					// Nếu keyword xuất hiện nhiều vị trí trong cùng 1 user, 
-					// sẽ cộng text += ... nhiều lần.
-					// Ví dụ: keyword = "a"
-					// User có nhiều chữ "a" → sẽ in lặp nhiều dòng.
-				}
-			}
-		}
-
-	} else {
-		for (let i = 0; i < users.length; i++) {
-			text += "ID: " + users[i].id + "<br>"
-				+ "Họ và tên: " + users[i].first_name + " " + users[i].last_name + "<br>"
-				+ "Email: " + users[i].email + "<br><br>";
-		}
+	let filteredUser;
+	if(key === ""){
+		filteredUser = users;
+	}
+	else {
+		//tạo 1 mảng mới để chứa những object được lọc từ users vói điều kiện object
+		//này có fullname hoặc email chứa key
+		filteredUser = users.filter(user => {
+			let fullName = (user.first_name + " " + user.last_name).toLocaleLowerCase();
+			let email = user.email.toLocaleLowerCase();
+			return fullName.includes(key) || email.includes(key);
+		});
 	}
 
-	document.getElementById("pOutput").innerHTML = text;
+	//In danh sách
+	//dùng forEach không tạo mảng mới mà biến đổi từng phần tử của mảng hiện tại
+	filteredUser.forEach(user => {
+		html += `
+		<tr>
+			<td>${user.id}</td>
+			<td>${user.first_name} ${user.last_name}</td>
+			<td>${user.email}</td>
+		</tr>
+		`;
+	});
+	
+	html += `
+	</tbody>
+	</talble>
+	`;
+	document.getElementById("table-container").innerHTML = html;
+}
+
+function listPost() {
+	let html = `
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+	  <th>Ngày tạo</th>
+	  <th>Họ và tên người tạo</th>
+    </tr>
+  </thead>
+  <tbody>
+`;
+	for(let i = 0; i < posts.length; i++){
+		for(let j = 0; j < users.length; j++) {
+			if(posts[i].user_id === users[j].id){
+				let fullName = users[j].first_name + " " + users[j].last_name;
+				html += `
+				<tr>
+					<td>${posts[i].id}</td>
+					<td>${posts[i].title}</td>
+					<td>${posts[i].created_at}</td>
+					<td>${fullName}</td>
+				</tr>
+				`;
+			}
+		}
+	}
+	html += `
+	</tbody>
+	</talble>
+	`;
+	document.getElementById("table-container").innerHTML = html;
+}
+
+// Hiển thị chi tiêt 1 post và giới hạn số chữ cho content
+function autoLimit(text, maxLength) {
+  if (text.length <= maxLength) return text;
+  return text.substring(0, maxLength) + "...";
+}
+function afterHalf(text){
+	return "..." + text.substring(80);
+}
+
+
+function chiTiet() {
+	let idChiTiet = Number(document.getElementById("idOnly").value);
+	let html = `
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tiêu đề</th>
+	  <th>Nội dung</th>
+	  <th>Link ảnh</th>
+	  <th>Tên người tạo</th>
+	  <th>Ngày tạo</th>
+	  <th>Ngày sửa đổi</th>
+    </tr>
+  </thead>
+  <tbody>
+`;
+
+		for(let i = 0; i < posts.length; i++) {
+			if(idChiTiet === posts[i].id){
+				for(let j = 0; j < users.length; j++){
+					if(posts[i].user_id === users[j].id){
+				let fullName = users[j].first_name + " " + users[j].last_name;
+				html += `
+				<tr>
+					<td>${posts[i].id}</td>
+					<td>${posts[i].title}</td>
+					<td id="noiDung">
+					<div id="toolTip"> 
+					<span id="toolTipText">${afterHalf(posts[i].content)} </span>
+					<span>
+					${autoLimit(posts[i].content, 80)}
+					<span>
+					</div>
+					</td>
+					<td>${posts[i].image}</td>
+					<td>${fullName}</td>
+					<td>${posts[i].created_at}</td>
+					<td>${posts[i].updated_at}</td>
+				</tr>
+				</tbody>
+				</talble>
+				`;
+				document.getElementById("table-container").innerHTML = html;
+				break;
+			}
+			}
+		}
+		}
 }
