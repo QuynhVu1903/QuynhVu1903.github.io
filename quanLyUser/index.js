@@ -1,13 +1,14 @@
-
+import { users } from "./data.js";
+import { posts } from "./data.js";
 // CODE
 
-function showSignup() {
+window.showSignup = function () {
 	document.getElementById("loginForm").style.display = "none";
 	document.getElementById("signupBox").style.display = "flex";
 
 }
 
-function showLogin() {
+window.showLogin = function () {
 	document.getElementById("signupBox").style.display = "none";
 	document.getElementById("loginForm").style.display = "block";
 }
@@ -22,9 +23,10 @@ function check(emailInput, passwordInput) {
 	}
 }
 
-function signIn() {
+window.signIn = function () {
 	let emailInput = document.getElementById("email").value;
 	let passwordInput = document.getElementById("password").value;
+	let greeting;
 	if (emailInput !== null && emailInput.length > 0 && passwordInput !== null && passwordInput.length > 0) {
 		let result = check(emailInput, passwordInput);
 		if (result) {
@@ -37,7 +39,7 @@ function signIn() {
 	}
 	else {
 
-		let greeting = "Hãy nhập đầy đủ thông tin";
+		greeting = "Hãy nhập đầy đủ thông tin";
 		alert(greeting);
 	}
 }
@@ -50,7 +52,7 @@ function check1(emailSignUp) {
 		}
 	}
 }
-function register() {
+window.register = function() {
 	let first = document.getElementById("first").value;
 	let last = document.getElementById("last").value;
 	let emailSignUp = document.getElementById("emailSignUp").value;
@@ -84,7 +86,7 @@ function register() {
 	}
 }
 
-function danhSach() {
+window.danhSach = function () {
 	let key = document.getElementById("list").value.trim().toLowerCase();
 	let html = `
 <table>
@@ -130,98 +132,3 @@ function danhSach() {
 	document.getElementById("table-container").innerHTML = html;
 }
 
-function listPost() {
-	let html = `
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Title</th>
-	  <th>Ngày tạo</th>
-	  <th>Họ và tên người tạo</th>
-    </tr>
-  </thead>
-  <tbody>
-`;
-	for(let i = 0; i < posts.length; i++){
-		for(let j = 0; j < users.length; j++) {
-			if(posts[i].user_id === users[j].id){
-				let fullName = users[j].first_name + " " + users[j].last_name;
-				html += `
-				<tr>
-					<td>${posts[i].id}</td>
-					<td>${posts[i].title}</td>
-					<td>${posts[i].created_at}</td>
-					<td>${fullName}</td>
-				</tr>
-				`;
-			}
-		}
-	}
-	html += `
-	</tbody>
-	</talble>
-	`;
-	document.getElementById("table-container").innerHTML = html;
-}
-
-// Hiển thị chi tiêt 1 post và giới hạn số chữ cho content
-function autoLimit(text, maxLength) {
-  if (text.length <= maxLength) return text;
-  return text.substring(0, maxLength) + "...";
-}
-function afterHalf(text){
-	return "..." + text.substring(80);
-}
-
-
-function chiTiet() {
-	let idChiTiet = Number(document.getElementById("idOnly").value);
-	let html = `
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Tiêu đề</th>
-	  <th>Nội dung</th>
-	  <th>Link ảnh</th>
-	  <th>Tên người tạo</th>
-	  <th>Ngày tạo</th>
-	  <th>Ngày sửa đổi</th>
-    </tr>
-  </thead>
-  <tbody>
-`;
-
-		for(let i = 0; i < posts.length; i++) {
-			if(idChiTiet === posts[i].id){
-				for(let j = 0; j < users.length; j++){
-					if(posts[i].user_id === users[j].id){
-				let fullName = users[j].first_name + " " + users[j].last_name;
-				html += `
-				<tr>
-					<td>${posts[i].id}</td>
-					<td>${posts[i].title}</td>
-					<td id="noiDung">
-					<div id="toolTip"> 
-					<span id="toolTipText">${afterHalf(posts[i].content)} </span>
-					<span>
-					${autoLimit(posts[i].content, 80)}
-					<span>
-					</div>
-					</td>
-					<td>${posts[i].image}</td>
-					<td>${fullName}</td>
-					<td>${posts[i].created_at}</td>
-					<td>${posts[i].updated_at}</td>
-				</tr>
-				</tbody>
-				</talble>
-				`;
-				document.getElementById("table-container").innerHTML = html;
-				break;
-			}
-			}
-		}
-		}
-}

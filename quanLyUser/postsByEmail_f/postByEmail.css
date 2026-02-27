@@ -1,0 +1,129 @@
+html,
+body {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.iconTitle {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 10px;
+    width: 830px;
+}
+
+.box1>div {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.box1List>button {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    border-color: rgb(111, 147, 226);
+    background-color: rgb(111, 147, 226);
+    border-style: none;
+    padding: 10px 10px;
+}
+
+.box1List>button:hover {
+    background-color: rgb(87, 110, 172);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.box1List>input {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    height: 25px;
+    width: 238px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.iconBlog>h1 {
+    margin-top: 17px
+}
+
+.post-item {
+    width: 800px;
+    margin: 20px auto;
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.post-nameImg {
+    flex: 3
+}
+
+/* .post-nameImg {
+    display: flex;
+    flex-direction: column;
+} */
+.post-nameImg img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    padding-top: 20px;
+}
+
+.post-body {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titleH3 h3 {
+    margin: 0 0 10px 0;
+}
+
+.content {
+    max-height: 120px;
+    /* Giới hạn chiều cao */
+    overflow-y: auto;
+    /* Có thanh cuộn dọc */
+    padding-right: 5px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    border: 1px solid #eee;
+    padding: 8px;
+    border-radius: 4px;
+    background: #fafafa;
+    text-align: justify;
+}
+
+.post-meta {
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding-top: 10px;
+}

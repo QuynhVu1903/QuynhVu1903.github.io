@@ -1,0 +1,135 @@
+html,
+body {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 10px;
+    gap: 20px;
+}
+.iconTitle {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.box1 {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 10px;
+}
+
+.box1>div {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.box1List>button {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    border-color: rgb(111, 147, 226);
+    background-color: rgb(111, 147, 226);
+    border-style: none;
+    padding: 10px 10px;
+}
+
+.box1List>button:hover {
+    background-color: rgb(87, 110, 172);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.box1List>input {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    height: 25px;
+    width: 238px;
+    border-radius: 5px;
+    border: 1px solid;
+}
+.iconBlog > h1 {
+    margin-top: 17px
+}
+.box2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.h2Box>h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* THỬ CARD */
+.insideBox2 {
+    display: flex;
+    width: 100%;
+}
+.post-meta {
+    flex: 2;
+}
+.imgPost {
+    flex: 8;
+}
+.post-card {
+display: flex;
+  width: 1000px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.insideBox2 {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.leftBox2 {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+}
+.imgPost img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.post-content {
+  max-height: 200px;   /* Giới hạn chiều cao */
+  overflow-y: auto;    /* Có scroll nếu dài */
+  margin: 15px 0;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.post-meta {
+  /* background: #f0f0f0; */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  justify-content: center;
+}
+.date {
+    display: flex;
+    justify-content: center;
+    gap:20px
+}

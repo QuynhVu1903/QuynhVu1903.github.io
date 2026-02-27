@@ -15,11 +15,15 @@ body {
     margin-top: 100px;
     gap: 20px;
 }
-
+.iconTitle {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
 .box1 {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: start;
     gap: 10px;
 }
 
@@ -53,7 +57,9 @@ body {
     border-radius: 5px;
     border: 1px solid;
 }
-
+.iconBlog > h1 {
+    margin-top: 17px
+}
 .box2 {
     display: flex;
     flex-direction: column;
@@ -84,11 +90,16 @@ table {
 
 }
 
-thead th {
+/* thead th {
     position: sticky;
     top: 0;
     z-index: 10;
-
+    text-align: center;
+} */
+ thead {
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 thead {
@@ -153,19 +164,19 @@ tbody tr:nth-child(even) {
 .box3 {
     margin: 20px;
 }
-.box3>button {
+.box3>h2 {
     color: black;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     border-radius: 5px;
-    border-color: rgb(111, 147, 226);
-    background-color: rgb(111, 147, 226);
+    /* border-color: rgb(111, 147, 226);
+    background-color: rgb(111, 147, 226); */
     border-style: none;
     padding: 10px 10px;
 }
-
+/* 
 .box3>button:hover {
     background-color: rgb(87, 110, 172);
     font-weight: bold;
     cursor: pointer;
-}
+} */
