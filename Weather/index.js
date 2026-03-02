@@ -61,4 +61,6 @@ function displayWeather(list) {
     // Gộp Icon và City
     iconBox.appendChild(divIcon);
     iconBox.appendChild(divCity);
+
+    // xem lại đoạn này
 }
