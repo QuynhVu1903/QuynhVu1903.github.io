@@ -20,17 +20,53 @@ header {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: white;
-    /* -webkit-text-stroke: 2px black;
-    font-size: 20px; */
-      text-shadow:
-    -2px -2px 0 black,
-     2px -2px 0 black,
-    -2px  2px 0 black,
-     2px  2px 0 black,
-     0px  2px 0 black,
-     2px  0px 0 black,
-    -2px  0px 0 black,
-     0px -2px 0 black;
+    text-shadow:
+        -2px -2px 0 black,
+        2px -2px 0 black,
+        -2px 2px 0 black,
+        2px 2px 0 black,
+        0px 2px 0 black,
+        2px 0px 0 black,
+        -2px 0px 0 black,
+        0px -2px 0 black;
+}
+
+#place {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.divIcon {
+    font-weight: 600;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    font-size: 20px;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black,
+        0px 1px 0 black,
+        1px 0px 0 black,
+        -1px 0px 0 black,
+        0px -1px 0 black;
+}
+
+.divCity {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black,
+        0px 1px 0 black,
+        1px 0px 0 black,
+        -1px 0px 0 black,
+        0px -1px 0 black;
 }
 
 .weatherHeader {
@@ -50,7 +86,7 @@ header {
 }
 
 
-.buttonHeader > input {
+.buttonHeader>input {
     border-radius: 8px;
     border: 1px solid rgb(121, 121, 121);
     width: 100%;
@@ -58,13 +94,14 @@ header {
     padding: 0 10px 0 35px;
     /*chỗ bên phải cho icon*/
 }
+
 .icon {
     position: absolute;
     padding-left: 10px;
-    /* transform: translateY(-px); */
     cursor: pointer;
     color: grey;
 }
+
 button {
     margin-left: 10px;
     border-radius: 8px;
@@ -73,52 +110,63 @@ button {
     height: 35px;
     width: 65px;
     cursor: pointer;
+    font-weight: bold;
 }
+
 button:hover {
     border: 1px solid rgb(179, 117, 3);
     background-color: rgb(179, 117, 3);
 }
+
 main {
+    /* padding */
     width: 100%;
     height: auto;
 }
+
 .weather-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
 .cardWeather {
-  background: rgba(7, 69, 124, 0.5);
-  padding: 15px;
-  border-radius: 12px;
-  backdrop-filter: blur(2px); 
-  /* Làm mờ phần nền phía sau phần tử */
+    background: rgba(7, 69, 124, 0.5);
+    padding: 15px;
+    border-radius: 12px;
+    backdrop-filter: blur(2px);
+    /* Làm mờ phần nền phía sau phần tử */
 }
+
 .divCard {
     display: flex;
     flex-direction: column;
 }
+
 .box2 {
     display: flex;
     justify-content: space-between;
 }
-.h2Div > h2{
+
+.h2Div>h2 {
 
     color: white;
     font-family: 'Poppins', sans-serif;
 }
+
 .right {
     align-items: right;
 }
-.pDiv > p {
+
+.pDiv>p {
     padding: 0;
     margin-bottom: 0px;
     color: white;
     font-family: 'Poppins', sans-serif;
 }
-.p2Div > p {
+
+.p2Div>p {
     margin-top: 0;
     color: white;
     font-family: 'Poppins', sans-serif;
