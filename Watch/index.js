@@ -124,7 +124,7 @@ lapBtn.addEventListener("click", () => {
       // Hiện bảng nếu đang ẩn
       lapTableWrapper.classList.remove("hidden");
 
-      // Tạo hàng mới
+      // Tạo tr mới
       const tr = document.createElement("tr");
       tr.className = "hover:bg-gray-800 transition-colors";
 
