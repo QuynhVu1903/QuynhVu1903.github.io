@@ -26,7 +26,7 @@
                 <div class="flex gap-9 flex justify-center text-white mt-12">
 
                     <!-- Khi ấn start, pause xuất hiện, lap xuất hiện -->
-                    <!-- Khi ấn pause, start ẩm đi, lap không ấn được, chữ bị mờ đi và khi di chuột vào hiện hình cấm -->
+                    <!-- Khi ấn pause, start ẩm đi, lap không ấn được - disabled, chữ bị mờ đi và khi di chuột vào hiện hình cấm - cursor not allow, opacity-->
                     <button id="lapBtn" class="opacity-40 cursor-not-allowed" disabled>LAP</button>
                     <button id="startBtn" class="bg-indigo-500 hover:bg-indigo-700
                                                     hover:scale-105
@@ -40,19 +40,20 @@
                                                 transition-all duration-300
                                                 text-white  rounded-[50%] w-24 h-24 bg-indigo-500
                                                 text-2xl
-                                                font-sans hidden">PAUSE</button>
+                                                font-sans hidden">PAUSE</button> <!--hidden để ẩn đi lúc đầu-->
                     <button id="resetBtn" class="opacity-40 cursor-not-allowed font-sans" disabled>RESET</button>
                 </div>
             </div>
             <!-- Bảng Lap -->
              <!-- Bảng mặc định hidden, chỉ hiện khi có lap đầu tiên -->
-    <div id="lapTableWrapper" class="hidden overflow-hidden rounded-xl border border-gray-700">
+    <div id="lapTableWrapper" class="hidden overflow-hidden rounded-xl border border-gray-700 max-w-12xl mx-auto">
       <table class="w-full">
-        <thead class="bg-gray-800">
+        <thead class="bg-gray-800"> 
+          <!-- thêm chiều rộng cố định ở đây -->
           <tr>
-            <th class="px-6 py-3 text-left text-gray-400 text-sm font-semibold uppercase tracking-wider">Vòng</th>
-            <th class="px-6 py-3 text-center text-gray-400 text-sm font-semibold uppercase tracking-wider">Thời gian vòng</th>
-            <th class="px-6 py-3 text-right text-gray-400 text-sm font-semibold uppercase tracking-wider">Tổng</th>
+            <th class="px-6 py-3 text-center text-gray-400 text-sm font-semibold uppercase tracking-wider">LAP</th>
+            <th class="px-6 py-3 text-center text-gray-400 text-sm font-semibold uppercase tracking-wider">TIME</th>
+            <th class="px-6 py-3 text-center text-gray-400 text-sm font-semibold uppercase tracking-wider">TOTAL TIME</th>
           </tr>
         </thead>
         <tbody id="laps" class="divide-y divide-gray-700 bg-gray-900">
@@ -60,7 +61,7 @@
         </tbody>
       </table>
     </div>
-        </div>
+    </div>
     </div>
 
     <script src="./index.js"></script>

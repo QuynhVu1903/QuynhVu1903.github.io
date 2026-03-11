@@ -21,7 +21,7 @@
 
 
 let startTime = 0;
-let elapsedTime = 0;
+let elapsedTime = 0; //thời gian đã trôi qua
 let timerInterval;
 let isRunning = false;
 let lapCount = 0;
@@ -65,11 +65,23 @@ function updateTime() {
 startBtn.addEventListener("click", () => {
 
     if (!isRunning) { //nếu là true thì bắt đầu
+        timerInterval = setInterval(updateTime, 10);
         startTime = Date.now() - elapsedTime;
+        //chạy 5s
+        // elapsedTime = 5000
+        // startTime = Date.now() - elapsedTime;
+        // vd:Date.now() = 10000
+        // elapsedTime = 5000
+        // =>startTime = 10000 - 5000 = 5000
+        // Sau đó : Date.now() - startTime
+        // = 10000 - 5000
+        // = 5000
+
+
         // Cứ mỗi 10ms thì gọi hàm updateTime() một lần.
         //1 giây sẽ gọi khoảng 100 lần
         //Hiển thị được milliseconds, nếu để là 1000 thì chỉ nhìn thấy mỗi giây, k thấy ms
-        timerInterval = setInterval(updateTime, 10);
+        
         isRunning = true; //cho bằng true
         startBtn.style.display = "none";
         pauseBtn.style.display = "flex";
@@ -129,13 +141,13 @@ lapBtn.addEventListener("click", () => {
       tr.className = "hover:bg-gray-800 transition-colors";
 
       tr.innerHTML = `
-        <td class="px-6 py-3 text-gray-400 text-sm font-semibold">
-          Vòng ${lapCount}
+        <td class="px-6 py-3 text-gray-400 text-center font-semibold">
+          ${lapCount}
         </td>
         <td class="px-6 py-3 text-white font-mono text-center text-base">
           ${formatTime(lapTime)}
         </td>
-        <td class="px-6 py-3 text-indigo-400 font-mono text-right text-base">
+        <td class="px-6 py-3 text-indigo-400 font-mono text-center text-base">
           ${formatTime(elapsedTime)}
         </td>
       `;
