@@ -60,6 +60,36 @@ function formatTime(time) {
 function updateTime() {
     elapsedTime = Date.now() - startTime;
     display.textContent = formatTime(elapsedTime);
+    // chạy realtime
+    const currentLap = laps.firstChild;
+    if (currentLap) {
+
+        const lapTime = elapsedTime - lastLapTime;
+        // tìm cột Time của lap hiện tại để thay nội dung bằng thời gian mới
+        currentLap.children[1].textContent = formatTime(lapTime);
+        currentLap.children[2].textContent = formatTime(elapsedTime);
+
+    }
+}
+
+
+function createLap() {
+
+    lapCount++;
+
+    lapTableWrapper.classList.remove("hidden");
+
+    const tr = document.createElement("tr");
+    // tr.className = "hover:bg-gray-800 transition-colors";
+    tr.className = "odd:bg-gray-900 even:bg-gray-800 hover:bg-indigo-900 transition-colors";
+
+    tr.innerHTML = `
+        <td class="px-6 py-3 text-gray-400 text-center font-semibold">${lapCount}</td>
+        <td class="px-6 py-3 text-white font-mono text-center text-base">00:00:00</td>
+        <td class="px-6 py-3 text-indigo-400 font-mono text-center text-base">${formatTime(elapsedTime)}</td>
+    `;
+    // Thêm vào đầu bảng (lap mới nhất hiện trên cùng)
+    laps.prepend(tr);
 }
 
 startBtn.addEventListener("click", () => {
@@ -81,7 +111,7 @@ startBtn.addEventListener("click", () => {
         // Cứ mỗi 10ms thì gọi hàm updateTime() một lần.
         //1 giây sẽ gọi khoảng 100 lần
         //Hiển thị được milliseconds, nếu để là 1000 thì chỉ nhìn thấy mỗi giây, k thấy ms
-        
+
         isRunning = true; //cho bằng true
         startBtn.style.display = "none";
         pauseBtn.style.display = "flex";
@@ -90,6 +120,10 @@ startBtn.addEventListener("click", () => {
 
         lapBtn.classList.remove("opacity-40", "cursor-not-allowed");
         resetBtn.classList.remove("opacity-40", "cursor-not-allowed");
+
+        if (lapCount === 0) {
+            createLap();
+        }
     }
 });
 
@@ -111,13 +145,14 @@ resetBtn.addEventListener("click", () => {
     startTime = 0;
     elapsedTime = 0;
     lapCount = 0;
+    lastLapTime = 0;
     isRunning = false;
     display.textContent = "00:00:00";
     startBtn.style.display = "block";
     pauseBtn.style.display = "none";
-    lapBtn.disabled = "true";
+    lapBtn.disabled = true;
     lapBtn.classList.add("opacity-40", "cursor-not-allowed");
-    resetBtn.disabled = "true";
+    resetBtn.disabled = true;
     resetBtn.classList.add("opacity-40", "cursor-not-allowed");
     // Xóa bảng
     laps.innerHTML = "";
@@ -125,33 +160,11 @@ resetBtn.addEventListener("click", () => {
 });
 
 lapBtn.addEventListener("click", () => {
+
     if (!isRunning) return;
 
-      lapCount++;
+    lastLapTime = elapsedTime;
 
-      // Thời gian vòng này (từ lap trước đến hiện tại)
-      const lapTime = elapsedTime - lastLapTime; //thời gian đã chạy - thời gian từng vòng gần nhất
-      lastLapTime = elapsedTime;
+    createLap();
 
-      // Hiện bảng nếu đang ẩn
-      lapTableWrapper.classList.remove("hidden");
-
-      // Tạo tr mới
-      const tr = document.createElement("tr");
-      tr.className = "hover:bg-gray-800 transition-colors";
-
-      tr.innerHTML = `
-        <td class="px-6 py-3 text-gray-400 text-center font-semibold">
-          ${lapCount}
-        </td>
-        <td class="px-6 py-3 text-white font-mono text-center text-base">
-          ${formatTime(lapTime)}
-        </td>
-        <td class="px-6 py-3 text-indigo-400 font-mono text-center text-base">
-          ${formatTime(elapsedTime)}
-        </td>
-      `;
-
-      // Thêm vào đầu bảng (lap mới nhất hiện trên cùng)
-      laps.insertBefore(tr, laps.firstChild);
 });
