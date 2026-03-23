@@ -82,13 +82,37 @@ function App() {
                   <div className="frame10-icon">
                     <Ship />
                   </div>
-                  <div className="frame10-text">
-                    Cruise category</div>
+                  <div className="frame10-text">Cruise category</div>
                 </div>
               </div>
-              <div className="coolection-button">Search</div>
+              <div className="coolection-button">
+                <div>Search</div>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Content 2, gồm 3 ảnh */}
+      <div className="rectangle">
+        {/*  ::before tạo lớp gradient mờ bên trong  */}
+        <div className="pic2">
+        <div className="title-pic2">
+          <h2>Choose Your Perfect Halong Bay Experience</h2>
+          <p>With over 20 years of expertise, Asia Pacific Travel has been crafting memorable journeys for travelers worldwide. Our experienced tour guides and dedicated advisor team ensure every detail of your adventure is seamless and unforgettable.</p>
+        </div>
+
+        <div className="cards-container">
+          <div className="card1Pic2">
+            <div>Why Cruise with Us</div>
+            </div>
+          <div className="card2Pic2">
+            <div>Full & Half Package Tours</div>
+            </div>
+          <div className="card3Pic2">
+            <div>Think To Do</div>
+            </div>
+        </div>
         </div>
       </div>
     </>
