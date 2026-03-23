@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montez&display=swap");
+
+#root {
+  width: 100%;
+  height: auto;
+  background-color: #ffff;
+}
+
+.pic1 {
+  width: 100%;
+  height: auto;
+  /* 11143.89px; */
+  background-color: #ffff;
+}
+
+.headerPic1 {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f8f8f8;
+}
+
+.listLeft {
+  /* padding-top: 10px; */
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.listLeft1 {
+  border-right: solid 1px #999999;
+  padding-right: 20px;
+  height: 15px;
+  display: flex;
+  align-content: center;
+  gap: 6px;
+}
+
+.listLeft1-icon {
+  align-self: center;
+  font-size: 10px;
+  color: #0d0d0c;
+}
+
+.listLeft1-text {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  color: #0d0d0c;
+}
+
+.listLeft2 {
+  height: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.listLeft2Icon {
+  align-items: center;
+  font-size: 10px;
+  color: #0d0d0c;
+}
+
+.liftLeft2Text {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  color: #0d0d0c;
+}
+.listRight {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  display: flex;
+  gap: 11px;
+  height: 31px;
+}
+.borderButton {
+  align-items: center;
+  display: flex;
+  border-radius: 20px;
+  border: solid 0.75px #e1e4e5;
+  gap: 4px;
+  padding: 8px 20px 8px 20px;
+}
+.borderButton:hover {
+  border: solid 0.75px #e8eaeb;
+  background-color: #e8eaeb;
+}
+.borderButton div {
+  align-items: center;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  color: #0d0d0c;
+  cursor: pointer;
+}
+.buttonDown {
+  align-self: center;
+  padding-top: 7px;
+}
+.frame305 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.frame305 div {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  color: #0d0d0c;
+  cursor: pointer;
+}
+.frame3051 {
+  border-right: solid 1px #999999;
+  padding-right: 20px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.frame3052 {
+  border-right: solid 1px #999999;
+  padding-right: 20px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Background */
+.backgroundPic1 {
+  height: 64px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffff;
+}
+.backgroundPic1Logo {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  min-width: 330px;
+  background-color: #0e47ab;
+  /* -webkit-mask-image: url(/mask.png); */
+  mask-image: url(/mask.png);
+  mask-repeat: no-repeat;
+}
+.backgroundPic1-nav {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  align-items: center;
+}
+.backgroundPic1-nav a {
+  text-decoration: none;
+  color: #0d0d0c;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+}
+.backgroundPic1-nav > .firstA {
+  font-weight: 700;
+  color: #0e47ab;
+}
+.backgroundPic1-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
+  align-self: center;
+  background-color: #0e47ab;
+  width: 100px;
+  height: 25px;
+  align-items: center;
+  display: flex;
+  border-radius: 5px;
+  border: solid 1px #0e47ab;
+  gap: 10px;
+  padding: 8px 20px 8px 20px;
+}
+.backgroundPic1-link a {
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  color: #ffff;
+  font-size: 12px;
+}
+.contentPic1 {
+  position: relative;
+  overflow: hidden;
+  height: 1280px;
+  /* ........... */
+  display: flex;
+  justify-content: center;
+}
+/* Lớp 1: ảnh nền */
+.contentPic1::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: url("/public/bghl.png") center/cover no-repeat;
+  background-position-y: -100px;
+  transform: scale(1.05);
+  z-index: 0;
+}
+/* Lớp 2: màu tối phủ lên ảnh */
+.contentPic1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* chỉnh số này: 0.3 nhạt → 0.7 rất tối */
+  z-index: 1;
+}
+/* Nội dung text phải trên cả hai lớp */
+.contentPic1 div {
+  position: relative;
+  z-index: 2; /* tăng lên 2, cao hơn ::after */
+  color: white;
+}
+.frame337 {
+  top: 243px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  width: 1240px;
+  height: 264px;
+}
+.frame322 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+.frame322-up {
+  font-family: "Montez", cursive;
+  font-weight: 400;
+  font-size: 64px;
+  color: #ffffff;
+}
+.frame322-down {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #ffffff;
+}
+.frame11 {
+  border-radius: 17.71px;
+  /* padding: 16px 24px 16px 24px; */
+  height: 84px;
+  gap: 36px;
+  display: flex;
+  background: #ffffff66;
+  width: 100%;
+  backdrop-filter: blur(2px);
+  align-items: center;
+}
+.frame610 {
+  align-items: center;
+  flex: 9;
+  display: flex;
+  justify-content: start;
+  width: 1192px;
+  height: 52px;
+  padding-left: 32px;
+}
+.frame6{
+  width: 462px;
+  display: flex;
+  gap:12px;
+  border-right: solid 1px #FFFFFF;
+  padding-right: 20px;
+}
+.frame10 {
+  width: 462px;
+  display: flex;
+  padding-left: 50px;
+  gap:12px;
+}
+.coolection-button {
+  flex: 1;
+}
