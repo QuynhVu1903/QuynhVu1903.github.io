@@ -81,8 +81,8 @@ function createLap() {
 
     const tr = document.createElement("tr");
     // tr.className = "hover:bg-gray-800 transition-colors";
-    tr.className = "odd:bg-gray-900 even:bg-gray-800 hover:bg-indigo-900 transition-colors";
-
+    tr.className = "border-t border-gray-700 odd:bg-gray-900 even:bg-gray-800 hover:bg-indigo-900 transition-colors";
+// border-t border-gray-700 gắn border trực tiếp cho phần tử
     tr.innerHTML = `
         <td class="px-6 py-3 text-gray-400 text-center font-semibold">${lapCount}</td>
         <td class="px-6 py-3 text-white font-mono text-center text-base">00:00:00</td>
