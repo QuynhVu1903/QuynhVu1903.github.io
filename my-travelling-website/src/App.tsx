@@ -11,8 +11,9 @@ import {
   Search,
   Ship,
   ArrowRight,
+  Heart,
 } from "lucide-react";
-const cruisePackages1 = [
+const cruisePackages = [
   {
     image: "public/laiva1.png",
     title: "Best of Luxury: Oriental Jade Hotel + Stellar of the Seas Cruise",
@@ -34,8 +35,6 @@ const cruisePackages1 = [
       "Get the best trip Hanoi - Lan Ha Bay with The Oriental Jade Hotel and Stellar of the Seas to indulge in the ancient vibe of Hanoi capital and the magnificent landscape of the heritage bay!",
     costPer: 770,
   },
-];
-const cruisePackages2 = [
   {
     image: "public/cave4.jpg",
     title: "Cultural Escape: Hanoi Boutique Hotel + Dragon Legend Cruise",
@@ -57,8 +56,6 @@ const cruisePackages2 = [
       "Get the best trip Hanoi - Lan Ha Bay with The Oriental Jade Hotel and Stellar of the Seas to indulge in the ancient vibe of Hanoi capital and the magnificent landscape of the heritage bay!",
     costPer: 770,
   },
-];
-const cruisePackages3 = [
   {
     image: "public/laiva7.jpg",
     title: "Adventure Package: O'Gallery Premier Hotel + Azalea Cruise",
@@ -81,6 +78,7 @@ const cruisePackages3 = [
     costPer: 770,
   },
 ];
+
 function App() {
   // const [count, setCount] = useState(0);
 
@@ -212,144 +210,41 @@ function App() {
           </div>
 
           <div className="pic3Frame327">
-            {/* frame 307 la hang 1 */}
-            <div className="frame307">
-              {/* 1 */}
-              {cruisePackages1.map((item, index) => {
-                return (
-                  <div className="card327">
-                    <div className="img327">
-                      <img src={item.image} />
-                    </div>
-                    <div className="container327">
-                      <div className="description">
-                        <h3>{item.title}</h3>
-                        <p>{item.subtitle}</p>
+            {cruisePackages.map((item, index) => {
+              return (
+                <div className="card327">
+                  <div className="img327">
+                    <img src={item.image} />
+                  </div>
+                  <div className="container327">
+                    <div className="frame6320">
+                      <div className="description327">
+                        <div className="desH3">{item.title}</div>
+                        <div className="desP">{item.subtitle}</div>
                       </div>
-                      <div className="price327">
-                        <div className="price">
-                          <p></p>
-                          <p>${item.costPer}.00</p>
-                          <p></p>
+                      <div className="frame6328">
+                        <div className="price327">
+                          <div className="priceP">Starting from</div>
+                          <div className="priceCost">${item.costPer}.00</div>
+                          <div className="priceP">/person</div>
+                        </div>
+                        <div className="CTA">
+                          <div className="iconHeart">
+                            <Heart size={16}/>
+                          </div>
+                          <div className="buttonViewDatail">
+                            <a href="#">View Detais</a>
+                          </div>
                         </div>
                       </div>
-                      <div className="CTA">
-                        <div className="iconHeart"></div>
-                        <div className="buttonViewDatail"></div>
-                      </div>
                     </div>
-                  </div>
-                );
-              })}
-              {/* 2 */}
-              {/* <div className="card327">
-                <div className="img327">
-                  <img src="/public/metsa2.jpg" />
-                </div>
-                <div className="container327">
-                  <div className="description">
-                    <h3></h3>
-                    <p></p>
-                  </div>
-                  <div className="price327">
-                    <div className="price">
-                      <p></p>
-                      <p></p>
-                      <p></p>
-                    </div>
-                  </div>
-                  <div className="CTA">
-                    <div className="iconHeart"></div>
-                    <div className="buttonViewDatail"></div>
                   </div>
                 </div>
-              </div> */}
-              {/* 3 */}
-              {/* <div className="card327">
-                <div className="img327">
-                  <img src="/public/laiva3.jpg" />
-                </div>
-                <div className="container327">
-                  <div className="description">
-                    <h3></h3>
-                    <p></p>
-                  </div>
-                  <div className="price327">
-                    <div className="price">
-                      <p></p>
-                      <p></p>
-                      <p></p>
-                    </div>
-                  </div>
-                  <div className="CTA">
-                    <div className="iconHeart"></div>
-                    <div className="buttonViewDatail"></div>
-                  </div>
-                </div>
-              </div> */}
-            </div>
-            {/* frame 308 la hang 2 */}
-            <div className="frame308">
-              
-              {cruisePackages2.map((item, index) => {
-                return (
-                  <div className="card327">
-                    <div className="img327">
-                      <img src={item.image} />
-                    </div>
-                    <div className="container327">
-                      <div className="description">
-                        <h3>{item.title}</h3>
-                        <p>{item.subtitle}</p>
-                      </div>
-                      <div className="price327">
-                        <div className="price">
-                          <p></p>
-                          <p>${item.costPer}.00</p>
-                          <p></p>
-                        </div>
-                      </div>
-                      <div className="CTA">
-                        <div className="iconHeart"></div>
-                        <div className="buttonViewDatail"></div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* frame 309 la hang 3 */}
-            <div className="frame309">
-              {cruisePackages3.map((item, index) => {
-                return (
-                  <div className="card327">
-                    <div className="img327">
-                      <img src={item.image} />
-                    </div>
-                    <div className="container327">
-                      <div className="description">
-                        <h3>{item.title}</h3>
-                        <p>{item.subtitle}</p>
-                      </div>
-                      <div className="price327">
-                        <div className="price">
-                          <p></p>
-                          <p>${item.costPer}.00</p>
-                          <p></p>
-                        </div>
-                      </div>
-                      <div className="CTA">
-                        <div className="iconHeart"></div>
-                        <div className="buttonViewDatail"></div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+              );
+            })}
             {/* het card */}
           </div>
+          
         </div>
       </div>
     </>
