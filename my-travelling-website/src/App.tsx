@@ -13,6 +13,11 @@ import {
   ArrowRight,
   Heart,
 } from "lucide-react";
+import Carousel, { slides } from "./components/swiper/swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+
 const cruisePackages = [
   {
     image: "public/laiva1.png",
@@ -230,7 +235,7 @@ function App() {
                         </div>
                         <div className="CTA">
                           <div className="iconHeart">
-                            <Heart size={16}/>
+                            <Heart size={16} />
                           </div>
                           <div className="buttonViewDatail">
                             <a href="#">View Detais</a>
@@ -244,7 +249,119 @@ function App() {
             })}
             {/* het card */}
           </div>
-          
+        </div>
+      </div>
+
+      {/* Pic 4 */}
+      <div className="pic4background">
+        <div className="frame298">
+          <div className="vietnam298">Vietnam Adventure Travel</div>
+          <div className="heading298">
+            Discover the Magic of Halong Bay and Beyond
+          </div>
+          <div className="titov298">
+            <ul>
+              <li>Titov Island: A scenic spot with panoramic views.</li>
+              <li>
+                Sung Sot Cave: Explore the mesmerizing stalactites and
+                stalagmites.
+              </li>
+              <li>Luon Cave: Experience kayaking or bamboo boat rides.</li>
+              <li>Bai Tu Long Bay: A tranquil alternative to Halong Bay.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="frame326">
+          {/* <Carousel /> */}
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={3}
+            loop
+            // style={{ width: 200, height: 400 }}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+          >
+            {slides.map((image, i) => {
+              return (
+                <SwiperSlide style={{ width: "100%" }}>
+                  <img
+                    src={image}
+                    alt={"pic-" + i}
+                    style={{ width: "100%", height: 300, objectFit: "cover" }}
+                  />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+      </div>
+
+      {/* Pic 5 */}
+
+      <div className="pic5">
+        <div className="frame289">
+          <div className="frame290">
+            <div className="tour290">
+              Our advisor team is ready to help you plan your dream trip to
+              Halong Bay
+            </div>
+            <div className="frame333">
+              <div>
+                <ul>
+                  <li>20+ years of expertise as a top-rated tour operator.</li>
+                  <li>
+                    Professional, friendly, and knowledgeable tour guides.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul>
+                  <li>Customizable packages to suit every traveler’s needs.</li>
+                  <li>Commitment to quality and safety.</li>
+                  <li>Include testimonials from past customers.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="frame332">
+            <div className="frame331">
+              <div className="frame330">
+                <div className="cart1330">
+                  <div className="frame30">
+                    <div className="title30">2 Days Cruise</div>
+                    <div className="sub30">
+                      Experience The Ancient History & Beaches
+                    </div>
+                  </div>
+                </div>
+                <div className="cart2330">
+                  <div className="frame30">
+                    <div className="title30">3 Days Cruise</div>
+                    <div className="sub30">
+                      Discover The Land Of Pharaohs & Pyramids
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="cart331">
+                <div className="frame30">
+                  <div className="title30">Cat Ba Island</div>
+                  <div className="sub30">
+                    Embark On A Journey For Your Lifetime
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="cart332">
+              <div className="title30">Halong Bay</div>
+              <div className="sub30">
+                Indulge In The Art, Culture, And Cuisine
+              </div>
+              <div className="button332">
+                <a href="#">Add to voyage</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -197,6 +197,7 @@
   color: #ffff;
   font-size: 12px;
 }
+/* Phần tử cha để lớp nền k bị trôi */
 .contentPic1 {
   position: relative;
   overflow: hidden;
@@ -468,7 +469,7 @@
   flex-direction: column;
   justify-content: center;
   width: 1440px;
-  padding: 0 100px 100px 100px;
+  padding: 0 100px 0px 100px;
   gap: 10px;
   background-color: #ffffff;
 }
@@ -627,9 +628,8 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-
 }
-.price327  .priceP {
+.price327 .priceP {
   text-align: left;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -641,7 +641,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 24px;
-  color: #0E47AB;
+  color: #0e47ab;
 }
 .CTA {
   display: flex;
@@ -666,7 +666,7 @@
   align-items: center;
   display: flex;
   border-radius: 4px;
-  border: solid 1px #0E47AB;
+  border: solid 1px #0e47ab;
   gap: 6px;
   padding: 8px 20px 8px 20px;
 }
@@ -674,13 +674,285 @@
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
-  color: #0E47AB;
+  color: #0e47ab;
   font-size: 11px;
 }
-.buttonViewDatail a:hover{
+.buttonViewDatail a:hover {
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
   color: #093480;
   font-size: 11px;
+}
+
+/* Pic 4 */
+.pic4background {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+  gap: 100px;
+}
+/* Lớp 1: ảnh nền */
+.pic4background::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: url("/public/img086.png") center/cover no-repeat;
+  background-position-y: -100px;
+  transform: scale(1.05);
+  z-index: 0;
+}
+/* Lớp 2: màu tối phủ lên ảnh */
+.pic4background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* chỉnh số này: 0.3 nhạt → 0.7 rất tối */
+  z-index: 1;
+}
+/* Nội dung text phải trên cả hai lớp */
+.pic4background div,
+ul {
+  position: relative;
+  z-index: 2; /* tăng lên 2, cao hơn ::after */
+  /* color: white; */
+}
+.frame298 {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  padding-left: 100px;
+  gap: 22px;
+  /* flex: 6; */
+}
+.frame298 div {
+  text-align: left;
+}
+.vietnam298 {
+  font-family: "Montez", cursive;
+  font-weight: 400;
+  font-size: 36px;
+  color: #ffffff;
+}
+.heading298 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #ffffff;
+  line-height: 1.2; /* <-- giãn dòng khi xuống hàng */
+}
+.frame298 > ul {
+  padding-left: 23px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #ffffff;
+}
+.frame326 {
+  /* flex: 4; */
+  max-width: 800px;
+  max-height: 480px;
+
+}
+
+/* Pic 5 */
+
+.pic5 {
+  max-width: 100%;
+  max-height: 1217px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 100px 100px 100px; 
+}
+.frame289 {
+  max-width: 1240px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.frame290 {
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  gap: 24px;
+  justify-content: start;
+}
+.tour290 {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #0e47ab;
+  font-size: 36px;
+  text-align: center;
+  line-height: 1.2; 
+  padding: 0 250px 0 250px;
+}
+.frame333 {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+}
+.frame333  ul li {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #111111;
+  font-size: 17px;
+  text-align: left;
+}
+.frame332 {
+  width: 1240px;
+  max-height: 727px;
+  display: flex;
+  gap:22px;
+}
+.frame331 {
+  display: flex;
+  width: 756px;
+  height: 100%;
+  flex-direction: column;
+  gap: 24px;
+}
+.frame330 {
+  display: flex;
+  width: 100%;
+  height: 440px;
+  gap: 24px;
+
+}
+.cart1330 {
+    background-image: url(/public/2days.png);
+    background-position-x: -243px;
+    background-position-y: 1px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 366px;
+
+}
+.cart2330 {
+  background-image: url("/public/3days.png");
+  background-position-x: -156px;
+    background-position-y: 1px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 366px;
+
+}
+
+.frame30 {
+  position: relative;
+  z-index: 1;
+  background-color: #00000014; /* đen với 8% opacity */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari */
+  /* box-shadow: 0px 4px 48px 0px #1f5d9726; drop shadow: X=0, Y=4, Blur=48, Spread=0, màu #1F5D97 15% */
+  border-radius: 8px;
+  padding: 12px 24px 12px 24px;
+  width: 349px;
+
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #ffffff;
+}
+/* Lớp tối 20% đè lên ảnh */
+/* .cards-container > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #00000033;
+  border-radius: inherit;
+  z-index: 0;
+} */
+
+.cart1330, .cart2330, .cart331, .cart332 {
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* position: relative; cần cho ::after */
+  border-radius: 8px ;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 0px;
+  /* overflow: hidden; giữ ::after trong border-radius */
+}
+.title30 {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 17px;
+}
+.sub30 {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 13px;
+}
+.cart331 {
+  height: 200px;
+  width: 100%;
+  background-image: url("/public/catba.png");
+  /* background-position-x: -156px; */
+}
+
+.cart332 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-image: url("/public/halong.png");
+  background-position-x: -243px;
+    background-position-y: 1px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Lớp gradient đè lên ảnh */
+.cart332::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    #00000000 0%,
+    /* trong suốt ở trên */ #00000033 100% /* đen 20% ở dưới */
+  );
+}
+
+.button332 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
+  align-self: center;
+  background-color: #0e47ab;
+  width: 100px;
+  height: 25px;
+  align-items: center;
+  display: flex;
+  border-radius: 8px;
+  border: solid 1px #0e47ab;
+  gap: 10px;
+  padding: 8px 20px 8px 20px;
+  margin-left: 100px;
+}
+.button332 a {
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  color: #ffff;
+  font-size: 12px;
 }
