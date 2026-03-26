@@ -84,6 +84,51 @@ const cruisePackages = [
   },
 ];
 
+const testimonials = [
+  {
+    image: "public/avt1.png",
+    name: "Jane Smith",
+    job: "Business owner",
+    content:
+      "“We wanted a quick getaway, and the Cat Ba tour was perfect. In just a few days, we experienced breathtaking views and thrilling adventures. The team was professional and made everything easy for us.”",
+  },
+  {
+    image: "public/avt2.png",
+    name: "Jane Smith",
+    job: "Business owner",
+    content:
+      "“What stood out to us was the attention to detail in the itinerary. Each stop was well-planned, allowing us to explore the beauty of Cat Ba without feeling rushed. The documentation provided was also very helpful.”",
+  },
+  {
+    image: "public/avt3.png",
+    name: "Jane Smith",
+    job: "Business owner",
+    content:
+      "“We wanted a quick getaway, and the Cat Ba tour was perfect. In just a few days, we experienced breathtaking views and thrilling adventures. The team was professional and made everything easy for us.”",
+  },
+  {
+    image: "public/avt4.png",
+    name: "Jane Smith",
+    job: "Business owner",
+    content:
+      "“We wanted a quick getaway, and the Cat Ba tour was perfect. In just a few days, we experienced breathtaking views and thrilling adventures. The team was professional and made everything easy for us.”",
+  },
+  {
+    image: "public/avt5.png",
+    name: "Jane Smith",
+    job: "Business owner",
+    content:
+      "“We wanted a quick getaway, and the Cat Ba tour was perfect. In just a few days, we experienced breathtaking views and thrilling adventures. The team was professional and made everything easy for us.”",
+  },
+  {
+    image: "public/avt6.png",
+    name: "Jane Smith",
+    job: "Business owner",
+    content:
+      "“We wanted a quick getaway, and the Cat Ba tour was perfect. In just a few days, we experienced breathtaking views and thrilling adventures. The team was professional and made everything easy for us.”",
+  },
+];
+
 function App() {
   // const [count, setCount] = useState(0);
 
@@ -361,6 +406,140 @@ function App() {
                 <a href="#">Add to voyage</a>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Pic6 */}
+      <div className="pic6">
+        <div className="section5">
+          <div className="tourPic6">
+            <h2>Cruise Itineraries</h2>
+          </div>
+
+          <div className="grid">
+            <div className="item item-1">
+              <div className="frame4">
+                <div className="titlefr4">Halong Bay</div>
+                <div className="subfr4">
+                  Indulge In The Art, Culture, And Cuisine
+                </div>
+              </div>
+            </div>
+            <div className="item item-2">
+              <div className="frame4">
+                <div className="titlefr4">Cat Ba Island</div>
+                <div className="subfr4">
+                  Embark On A Journey For Your Lifetime
+                </div>
+              </div>
+            </div>
+            <div className="item item-3">
+              <div className="frame4">
+                <div className="titlefr4">Halong Bay</div>
+                <div className="subfr4">
+                  Indulge In The Art, Culture, And Cuisine
+                </div>
+              </div>
+            </div>
+            <div className="item item-4">
+              <div className="frame4">
+                <div className="titlefr4">Halong Bay</div>
+                <div className="subfr4">
+                  Indulge In The Art, Culture, And Cuisine
+                </div>
+              </div>
+            </div>
+            <div className="item item-5">
+              <div className="frame4">
+                <div className="titlefr4">Halong Bay</div>
+                <div className="subfr4">
+                  Indulge In The Art, Culture, And Cuisine
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Pic */}
+      <div className="pic7">
+        <div className="frame329">
+          <div className="titlePic7">
+            <div className="mainPic7">Unforgettable Travel Experiences</div>
+            <div className="subPic7">
+              <p>
+                With over 20 years of expertise, Asia Pacific Travel has been
+                crafting memorable journeys for travelers worldwide.
+              </p>
+              <p>
+                Our experienced tour guides and dedicated advisor team ensure
+                every detail of your adventure is seamless and unforgettable.
+              </p>
+            </div>
+          </div>
+          <div className="frame116">
+            {/* 6 cái thẻ ở đây */}
+            {testimonials.map((item, index) => {
+              return (
+                <div
+                  className="testimonials-card"
+                  style={{
+                    backgroundColor: index % 2 !== 0 ? "#0E47AB" : "#FFF",
+                    border: index % 2 !== 0 ? "#0E47AB" : "#FFF",
+                    marginTop:
+                      index === 0 || index === 2 || index === 3 || index === 5
+                        ? 24
+                        : 0,
+                  }}
+                >
+                  <div className="frame48">
+                    <div className="avt">
+                      <img src={item.image} />
+                    </div>
+                    <div className="nameJob">
+                      <h3
+                        style={{
+                          color: index % 2 !== 0 ? "#FFF" : "#0E47AB",
+                        }}
+                      >
+                        {item.name}
+                      </h3>
+                      <p
+                        style={{
+                          color: index % 2 !== 0 ? "#6A6A6A" : "#6a6a6a",
+                        }}
+                      >
+                        {item.job}
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    className="text48"
+                    style={{
+                      color: index % 2 !== 0 ? "#FFF" : "#000000",
+                    }}
+                  >
+                    {item.content}
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* <div className="testimonials-card">
+                <div className="frame48">
+                  <div className="avt">
+
+                  </div>
+                  <div className="nameJob">
+                    <h3></h3>
+                    <p></p>
+                  </div>
+                </div>
+                <div className="text48">
+
+                </div>
+              </div> */}
           </div>
         </div>
       </div>

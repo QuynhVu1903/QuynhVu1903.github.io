@@ -523,7 +523,7 @@
   align-content: space-between;
   gap: 48px;
   width: 1240px;
-  height: 1554.561767578125px;
+  height: 1555px;
 }
 /* .frame307, .frame308, .frame309 {
   width: 100%;
@@ -531,6 +531,7 @@
   display: flex;
   gap: 48px;
 } */
+
 .card327 {
   width: 100%;
   max-width: 375px;
@@ -757,7 +758,6 @@ ul {
   /* flex: 4; */
   max-width: 800px;
   max-height: 480px;
-
 }
 
 /* Pic 5 */
@@ -768,7 +768,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 100px 100px 100px; 
+  padding: 0 100px 100px 100px;
 }
 .frame289 {
   max-width: 1240px;
@@ -790,7 +790,7 @@ ul {
   color: #0e47ab;
   font-size: 36px;
   text-align: center;
-  line-height: 1.2; 
+  line-height: 1.2;
   padding: 0 250px 0 250px;
 }
 .frame333 {
@@ -798,7 +798,7 @@ ul {
   justify-content: space-around;
   align-items: start;
 }
-.frame333  ul li {
+.frame333 ul li {
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
@@ -810,7 +810,7 @@ ul {
   width: 1240px;
   max-height: 727px;
   display: flex;
-  gap:22px;
+  gap: 22px;
 }
 .frame331 {
   display: flex;
@@ -824,25 +824,22 @@ ul {
   width: 100%;
   height: 440px;
   gap: 24px;
-
 }
 .cart1330 {
-    background-image: url(/public/2days.png);
-    background-position-x: -243px;
-    background-position-y: 1px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 366px;
-
+  background-image: url(/public/2days.png);
+  background-position-x: -243px;
+  background-position-y: 1px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 366px;
 }
 .cart2330 {
   background-image: url("/public/3days.png");
   background-position-x: -156px;
-    background-position-y: 1px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 366px;
-
+  background-position-y: 1px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 366px;
 }
 
 .frame30 {
@@ -854,13 +851,17 @@ ul {
   /* box-shadow: 0px 4px 48px 0px #1f5d9726; drop shadow: X=0, Y=4, Blur=48, Spread=0, màu #1F5D97 15% */
   border-radius: 8px;
   padding: 12px 24px 12px 24px;
-  width: 349px;
+  margin: 20px;
 
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 700;
   font-size: 18px;
   text-align: center;
   color: #ffffff;
+  width: 100%;
+}
+.frame30 > * {
+  padding: 0 20px 0 20px;
 }
 /* Lớp tối 20% đè lên ảnh */
 /* .cards-container > div::after {
@@ -872,12 +873,15 @@ ul {
   z-index: 0;
 } */
 
-.cart1330, .cart2330, .cart331, .cart332 {
+.cart1330,
+.cart2330,
+.cart331,
+.cart332 {
   background-size: cover;
   background-repeat: no-repeat;
 
   /* position: relative; cần cho ::after */
-  border-radius: 8px ;
+  border-radius: 12px;
   display: flex;
   align-items: end;
   justify-content: center;
@@ -888,14 +892,14 @@ ul {
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 17px;
 }
 .sub30 {
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 13px;
 }
 .cart331 {
@@ -911,25 +915,31 @@ ul {
   position: relative;
   background-image: url("/public/halong.png");
   background-position-x: -243px;
-    background-position-y: 1px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-
+  background-position-y: 1px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 48px 0px rgba(31, 93, 151, 0.15);
+  overflow: hidden;
 }
 
-/* Lớp gradient đè lên ảnh */
+/* Lớp phủ mờ lên ảnh */
 .cart332::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    #00000000 0%,
-    /* trong suốt ở trên */ #00000033 100% /* đen 20% ở dưới */
-  );
+  inset: 0; /* ← quan trọng: phủ toàn bộ */
+  background-color: rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+/* Đảm bảo nội dung con nằm trên lớp nền */
+.cart332 > * {
+  position: relative;
+  z-index: 2;
 }
 
 .button332 {
@@ -948,6 +958,7 @@ ul {
   gap: 10px;
   padding: 8px 20px 8px 20px;
   margin-left: 100px;
+  box-shadow: 0px 5px 12px 0px #8282821a;
 }
 .button332 a {
   font-weight: 400;
@@ -955,4 +966,256 @@ ul {
   text-decoration: none;
   color: #ffff;
   font-size: 12px;
+}
+.button332:hover {
+  background-color: #2f62bb;
+  border: solid 1px #2f62bb;
+}
+
+/* Pic6 */
+
+.pic6 {
+  max-width: 100%;
+  max-height: 1133px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 100px 100px 100px;
+}
+.section5 {
+  width: 1240px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.tourPic6 {
+  color: black;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 400px 200px;
+  gap: 20px;
+}
+
+.grid > div {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+}
+
+/* Lớp gradient đè lên ảnh */
+.grid > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    #112f3800 0%,
+    /* trong suốt ở trên */ #00000033 100% /* đen 20% ở dưới */
+  );
+}
+.frame4 {
+  content: "";
+  position: absolute;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 4px;
+  padding: 16px;
+}
+.titlefr4 {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #ffff;
+  font-size: 24px;
+}
+.subfr4 {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #ffff;
+}
+
+/* Item lớn bên phải */
+.item-2 {
+  background-image: url(/public/grid2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+}
+
+/* Item trái trên */
+.item-1 {
+  background-image: url(/public/grid1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+/* 3 item dưới */
+.item-3 {
+  background-image: url(/public/grid3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 1 / 2;
+}
+
+.item-4 {
+  background-image: url(/public/grid4.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 2 / 3;
+}
+
+.item-5 {
+  background-image: url(/public/grid5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 3 / 4;
+}
+.tourPic6 > h2 {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #0e47ab;
+  font-size: 36px;
+}
+
+/* pic7 */
+.pic7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  max-width: 100%;
+  background-image: url(/public/pic7.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 973px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Lớp phủ mờ lên ảnh */
+.pic7::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* ← quan trọng: phủ toàn bộ */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+  /* background: linear-gradient(
+      0deg,
+  #000000,
+  #4E4E4E 0%
+  ); */
+}
+
+/* Đảm bảo nội dung con nằm trên lớp nền */
+.pic7 > * {
+  position: relative;
+  z-index: 2;
+}
+.frame329 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1250px;
+}
+.frame116 {
+  /* padding: 10px 100px 0 100px; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-between;
+  column-gap: 24px;
+  width: 1250px;
+  height: 100%;
+}
+
+.testimonials-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+  height: 256px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 24px;
+  border: 0.5px;
+  gap: 20px;
+  border-color: #bcc6d2;
+
+  border-style: solid;
+
+  border-color: #bcc6d2;
+}
+.avt {
+  width: 50px;
+  height: 50px;
+}
+.avt > img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.frame48 {
+  display: flex;
+  justify-content: start;
+  gap: 12px;
+}
+.nameJob h3 {
+  margin: 0;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #0e47ab;
+  font-size: 18px;
+  text-align: start;
+}
+.nameJob p {
+  margin: 0;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #6a6a6a;
+  font-size: 15px;
+}
+.text48 {
+  margin: 0;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+  font-size: 16px;
+  text-align: start;
+}
+.titlePic7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+.mainPic7 {
+  text-align: center;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 36px;
+}
+.subPic7 {
+  text-align: center;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 14px;
 }
