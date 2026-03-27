@@ -12,6 +12,8 @@ import {
   Ship,
   ArrowRight,
   Heart,
+  Star,
+  Diamond,
 } from "lucide-react";
 import Carousel, { slides } from "./components/swiper/swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -126,6 +128,39 @@ const testimonials = [
     job: "Business owner",
     content:
       "“We wanted a quick getaway, and the Cat Ba tour was perfect. In just a few days, we experienced breathtaking views and thrilling adventures. The team was professional and made everything easy for us.”",
+  },
+];
+
+const frame56 = [
+  {
+    image: "public/frame56.jpg",
+    title: "Heritage Tour Binh Chuan",
+    subtitle1: "Routing: Ha Noi - Ha Long - Ha Noi",
+    subtitle2: "Tour Style: Nature, Culture & History Tour",
+    subtitle3: "Tour Start: In Ha Noi / Tour End: In Ha Noi",
+    subtitle4: "Trip Duratuion: 2Days 1Night",
+    costPer: "$50",
+    strength: "/2Days 1Night",
+  },
+  {
+    image: "public/frame56.jpg",
+    title: "Heritage Tour Binh Chuan",
+    subtitle1: "Routing: Ha Noi - Ha Long - Ha Noi",
+    subtitle2: "Tour Style: Nature, Culture & History Tour",
+    subtitle3: "Tour Start: In Ha Noi / Tour End: In Ha Noi",
+    subtitle4: "Trip Duratuion: 2Days 1Night",
+    costPer: "$50",
+    strength: "/2Days 1Night",
+  },
+  {
+    image: "public/frame56.jpg",
+    title: "Heritage Tour Binh Chuan",
+    subtitle1: "Routing: Ha Noi - Ha Long - Ha Noi",
+    subtitle2: "Tour Style: Nature, Culture & History Tour",
+    subtitle3: "Tour Start: In Ha Noi / Tour End: In Ha Noi",
+    subtitle4: "Trip Duratuion: 2Days 1Night",
+    costPer: "$50",
+    strength: "/2Days 1Night",
   },
 ];
 
@@ -462,7 +497,7 @@ function App() {
         </div>
       </div>
 
-      {/* Pic */}
+      {/* Pic 7*/}
       <div className="pic7">
         <div className="frame329">
           <div className="titlePic7">
@@ -525,21 +560,96 @@ function App() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </div>
 
-            {/* <div className="testimonials-card">
-                <div className="frame48">
-                  <div className="avt">
-
+      {/* Pic 8 */}
+      <div className="pic8">
+        <div className="frame65">
+          <div className="title65">
+            <h2>Affordable Cruise Packages</h2>
+            <p>
+              With over 20 years of expertise, Asia Pacific Travel has been
+              crafting memorable journeys for travelers worldwide. Our
+              experienced tour guides and dedicated advisor team ensure every
+              detail of your adventure is seamless and unforgettable.
+            </p>
+          </div>
+          <div className="frame64">
+            {/* 3 cards */}
+            {frame56.map((item, index) => {
+              return (
+                <div className="card64">
+                  <div className="img64">
+                    <img src={item.image} />
                   </div>
-                  <div className="nameJob">
-                    <h3></h3>
-                    <p></p>
+                  <div className="infoPic8">
+                    <div className="frame56">
+                      <div className="title56">{item.title}</div>
+                      <div className="sub56">
+                        <ul>
+                          <li>{item.subtitle1}</li>
+                          <li>{item.subtitle2}</li>
+                          <li>{item.subtitle3}</li>
+                          <li>{item.subtitle4}</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="frame6131">
+                      <div className="line6131"></div>
+                      <div className="star6131">
+                        <Star size={12} fill="#87BAFF" color="#87BAFF" />
+                        <Diamond size={12} fill="#87BAFF" color="#87BAFF" />
+                        <Star size={12} fill="#87BAFF" color="#87BAFF" />
+                      </div>
+                    </div>
+                    <div className="costPic8">
+                      <div className="realCost">{item.costPer}</div>
+                      <div className="strength">{item.strength}</div>
+                    </div>
                   </div>
                 </div>
-                <div className="text48">
+              );
+            })}
+
+            {/* <div className="img64">
+
+            </div>
+            <div className="infoPic8">
+              <div className="frame56">
+                <div className="title56">
 
                 </div>
-              </div> */}
+                <div className="sub56">
+                  <ul>
+                    <li>
+
+                    </li>
+                    <li>
+
+                    </li>
+                    <li>
+
+                    </li>
+                    <li>
+
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="frame6131">
+                
+              </div>
+              <div className="costPic8">
+                  <div className="realCost">
+                    
+                  </div>
+                  <div className="strength">
+
+                  </div>
+              </div>
+            </div> */}
           </div>
         </div>
       </div>
