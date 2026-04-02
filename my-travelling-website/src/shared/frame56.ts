@@ -1,0 +1,32 @@
+export const frame56 = [
+  {
+    image: "public/frame56.jpg",
+    title: "Heritage Tour Binh Chuan",
+    subtitle1: "Routing: Ha Noi - Ha Long - Ha Noi",
+    subtitle2: "Tour Style: Nature, Culture & History Tour",
+    subtitle3: "Tour Start: In Ha Noi / Tour End: In Ha Noi",
+    subtitle4: "Trip Duratuion: 2Days 1Night",
+    costPer: "$50",
+    strength: "/2Days 1Night",
+  },
+  {
+    image: "public/frame56.jpg",
+    title: "Heritage Tour Binh Chuan",
+    subtitle1: "Routing: Ha Noi - Ha Long - Ha Noi",
+    subtitle2: "Tour Style: Nature, Culture & History Tour",
+    subtitle3: "Tour Start: In Ha Noi / Tour End: In Ha Noi",
+    subtitle4: "Trip Duratuion: 2Days 1Night",
+    costPer: "$50",
+    strength: "/2Days 1Night",
+  },
+  {
+    image: "public/frame56.jpg",
+    title: "Heritage Tour Binh Chuan",
+    subtitle1: "Routing: Ha Noi - Ha Long - Ha Noi",
+    subtitle2: "Tour Style: Nature, Culture & History Tour",
+    subtitle3: "Tour Start: In Ha Noi / Tour End: In Ha Noi",
+    subtitle4: "Trip Duratuion: 2Days 1Night",
+    costPer: "$50",
+    strength: "/2Days 1Night",
+  },
+];
