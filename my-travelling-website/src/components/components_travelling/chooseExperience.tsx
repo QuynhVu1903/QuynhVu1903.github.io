@@ -1,4 +1,4 @@
-const Pic2 = () => {
+const ChooseExperience = () => {
   return (
     <div className="rectangle">
       {/*  ::before tạo lớp gradient mờ bên trong  */}
@@ -31,4 +31,4 @@ const Pic2 = () => {
   );
 };
 
-export default Pic2
+export default ChooseExperience

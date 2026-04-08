@@ -4,7 +4,7 @@ import { faLocationDot, faPhoneVolume } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Send } from "lucide-react"
 
-const Pic12 = () => {
+const SignUp = () => {
     return (
               <div className="pic12">
         <div className="bgPic12">
@@ -154,4 +154,4 @@ const Pic12 = () => {
     )
 }
 
-export default Pic12
+export default SignUp

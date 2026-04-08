@@ -265,7 +265,7 @@
   display: flex;
   background: #ffffff66;
   width: 100%;
-  backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px); */
   align-items: center;
 }
 .frame610 {
@@ -284,11 +284,60 @@
   border-right: solid 1px #ffffff;
   padding-right: 20px;
 }
-.frame6-icone,
-.frame6-text,
+.frame6 input {
+  background: transparent;
+  backdrop-filter: none; /* bỏ luôn vì container đã blur rồi */
+  width: 462px;
+  height: 52px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+}
+
+.frame6 input::placeholder {
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+}
+.frame6-icon {
+  align-self: center;
+  color: #ffffff;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+}
+.frame10-icon {
+  align-self: center;
+}
 .frame10-icon,
 .frame10-text {
-  color: #ffffff8c;
+  color: #ffffff;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+#category {
+  background: transparent;
+  backdrop-filter: none; /* bỏ luôn vì container đã blur rồi */
+  width: 166px;
+  height: 52px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+}
+#category > option {
+background: #ffffff66;
+  backdrop-filter: none; /* bỏ luôn vì container đã blur rồi */
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 18px;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 400;
 }
@@ -318,9 +367,18 @@
   font-size: 18px;
   cursor: pointer;
 }
-.coolection-button div {
+
+.coolection-button button {
+  width: 100%;
+  height: 100%;
+    background-color: #ffffff;
+    border: none;
+    font-weight: 700;
+    font-size: 18px;
+  backdrop-filter: none;
   color: #005edc;
   font-family: "Be Vietnam Pro", sans-serif;
+   cursor: pointer;
 }
 
 /* Pic2 */

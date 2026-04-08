@@ -1,4 +1,4 @@
-const Pic5 = () => {
+const AdvisorTeam = () => {
     return (
               <div className="pic5">
         <div className="frame289Pic5">
@@ -69,4 +69,4 @@ const Pic5 = () => {
     )
 }
 
-export default Pic5
+export default AdvisorTeam

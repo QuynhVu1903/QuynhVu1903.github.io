@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { cruisePackages } from "../../shared/mocks";
 import Cruise from "../cruise";
 
-const Pic3 = () => {
+const CruisePackages = () => {
   return (
     <div className="pic3-background">
       <div className="pic3">
@@ -26,4 +26,4 @@ const Pic3 = () => {
     </div>
   );
 };
-export default Pic3
+export default CruisePackages

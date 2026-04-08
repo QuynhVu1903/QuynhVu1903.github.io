@@ -1,7 +1,7 @@
 import { blog } from "../../shared/blog";
 import ItemBlog from "../ItemBlog";
 
-const Pic10 = () => {
+const TravelBlog = () => {
   return (
     <div className="pic10">
       <div className="bgPic10">
@@ -49,4 +49,4 @@ const Pic10 = () => {
   );
 };
 
-export default Pic10
+export default TravelBlog

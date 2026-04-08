@@ -1,4 +1,4 @@
-const Pic6 = () => {
+const CruiseItineraries = () => {
     return (
         <div className="pic6">
         <div className="section5">
@@ -53,4 +53,4 @@ const Pic6 = () => {
     )
 }
 
-export default Pic6
+export default CruiseItineraries

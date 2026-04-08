@@ -1,19 +1,31 @@
 import type { Person } from "../../App";
-
-const TodoData = (props:{name:string,age:number,data:Person, todoList:any}) => {
-    const { name, age, data, todoList } = props;
-    console.log("check props: ", props)
-    return (
-      <div className="todo-data">
-        <div>My name is {name}</div>
-        <div>Data: {data.address}</div>
-        <div>Learning React</div>
-        <div>Watching Youtube</div>
-        <div>
-            {JSON.stringify(props.todoList)}
+// name:string,age:number,data:Person,
+const TodoData = (props: { todoList: any, deleteTodo: any }) => {
+  const { todoList, deleteTodo } = props;
+  
+  const handleClick = (id: any) => {
+    deleteTodo(id)
+  }
+  return (
+    <div className="todo-data">
+      {todoList.map((item, index) => {
+        return (
+        <div className={`todo-item`} key={item.id}>
+          <div>{item.name}</div>
+          
+          <button
+          onClick={() => handleClick(item.id)}
+          style={{cursor: "pointer"}}>Delete</button>
         </div>
-      </div>
-    );
-}
+      )})}
+
+    </div>
+  );
+};
 
 export default TodoData;
+
+
+// không sử dụng chỉ số của mảng để làm key ( key ={index})
+// Key phù hợp:
+// - sử dụng id lấy từ backend

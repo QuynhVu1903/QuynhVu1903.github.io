@@ -1,7 +1,7 @@
 import { testimonials } from "../../shared/test";
 import ItemTest from "../ItemTest";
 
-const Pic7 = () => {
+const UnfogettableExperiences = () => {
     return (
         <div className="pic7">
         <div className="frame329">
@@ -43,4 +43,4 @@ const Pic7 = () => {
     )
 }
 
-export default Pic7
+export default UnfogettableExperiences

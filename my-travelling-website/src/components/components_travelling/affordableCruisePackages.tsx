@@ -1,7 +1,7 @@
 import { frame56 } from "../../shared/frame56";
 import ItemFrame56 from "../frame56";
 
-const Pic8 = () => {
+const AffordableCruisePackages = () => {
     return (
         <div className="pic8">
         <div className="frame65">
@@ -24,4 +24,4 @@ const Pic8 = () => {
       </div>
     )
 }
-export default Pic8
+export default AffordableCruisePackages

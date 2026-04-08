@@ -38,17 +38,20 @@ import ItemTest from "./components/ItemTest";
 import { frame56 } from "./shared/frame56";
 import ItemFrame56 from "./components/frame56";
 import { blog } from "./shared/blog";
-import Pic1 from "./components/pic_number/pic1";
-import Pic2 from "./components/pic_number/pic2";
+
 import Cruise from "./components/cruise";
-import Pic3 from "./components/pic_number/pic3";
-import Pic5 from "./components/pic_number/pic5";
-import Pic6 from "./components/pic_number/pic6";
-import Pic7 from "./components/pic_number/pic7";
-import Pic8 from "./components/pic_number/pic8";
-import Pic9 from "./components/pic_number/pic9";
-import Pic10 from "./components/pic_number/pic10";
-import Pic12 from "./components/pic_number/pic12";
+
+import BackgroundHeader from "./components/components_travelling/backgroundHeader";
+import ChooseExperience from "./components/components_travelling/chooseExperience";
+import CruisePackages from "./components/components_travelling/cruisePackages";
+import AdvisorTeam from "./components/components_travelling/advisorTeam";
+import CruiseItineraries from "./components/components_travelling/cruiseItineraries";
+import UnfogettableExperiences from "./components/components_travelling/unfogettableExperiences";
+import AffordableCruisePackages from "./components/components_travelling/affordableCruisePackages";
+import DiscoverNextAdventure from "./components/components_travelling/discoverNextAdventure";
+import TravelBlog from "./components/components_travelling/travelBlog";
+import SignUp from "./components/components_travelling/signUp";
+import Footer from "./components/components_travelling/footer";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -56,18 +59,15 @@ function App() {
 
   return (
     <>
-      <Pic1 />
+      <BackgroundHeader />
 
-      {/* Pic2 2, gồm 3 ảnh */}
+      <ChooseExperience />
 
-      <Pic2 />
-
-      {/* Pic 3 */}
-      <Pic3/>
+      <CruisePackages />
 
       {/* Pic 4 */}
       <div className="pic4background">
-        <div className="frame298"> 
+        <div className="frame298">
           <div className="vietnam298">Vietnam Adventure Travel</div>
           <div className="heading298">
             Discover the Magic of Halong Bay and Beyond
@@ -109,29 +109,17 @@ function App() {
         </div>
       </div>
 
-      {/* Pic 5 */}
+      <AdvisorTeam />
 
-      <Pic5 />
+      <CruiseItineraries />
 
-      {/* Pic6 */}
-      
-      <Pic6 />
+      <UnfogettableExperiences />
 
-      {/* Pic 7*/}
-      
-      <Pic7 />
+      <AffordableCruisePackages />
 
-      {/* Pic 8 */}
-      
-      <Pic8 />
+      <DiscoverNextAdventure />
 
-      {/* Pic 9 */}
-      
-      <Pic9 />
-
-      {/* pic 10 */}
-
-      <Pic10 />
+      <TravelBlog />
 
       {/* Pic 11 */}
       <div className="pic11">
@@ -142,26 +130,9 @@ function App() {
         <img className="pic11e" src="public/11e.png" />
       </div>
 
-      {/* Pic 12 */}
+      <SignUp />
 
-        <Pic12 />
-
-      {/* Footer */}
-      <div className="container-cards">
-        <div className="container-rights">
-          <div className="rights-cards">
-            <p>2025 Blue Dragon Tours, All Rights Reserved.</p>
-            <p>International Tour Operator Licence No: 001-500/TCDL</p>
-            <p>PATA Member Number: 7375</p>
-          </div>
-          <div className="payment-cards">
-            <div className="accept">We Accept</div>
-            <div className="cards-method">
-              <img src="public/methods.png" />
-            </div>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </>
   );
 }
