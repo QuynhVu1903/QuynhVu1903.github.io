@@ -24,7 +24,7 @@ const UnfogettableExperiences = () => {
               return (
                 <ItemTest
                   item={item}
-                  key={index}
+                  key={item}
                   isOdd={index % 2 !== 0}
                   style={{
                     marginTop:

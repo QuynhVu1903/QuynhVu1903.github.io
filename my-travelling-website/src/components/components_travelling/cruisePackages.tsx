@@ -18,7 +18,7 @@ const CruisePackages = () => {
 
         <div className="pic3Frame327">
           {cruisePackages.map((item, index) => {
-            return <Cruise item={item} key={index} />;
+            return <Cruise item={item} key={item} />;
           })}
           {/* het card */}
         </div>

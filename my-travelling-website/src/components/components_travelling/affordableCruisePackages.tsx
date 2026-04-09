@@ -17,7 +17,7 @@ const AffordableCruisePackages = () => {
           <div className="frame64">
             {/* 3 cards */}
             {frame56.map((item, index) => {
-              return <ItemFrame56 item={item} key={index} />;
+              return <ItemFrame56 item={item} key={item} />;
             })}
           </div>
         </div>

@@ -38,7 +38,7 @@ const TravelBlog = () => {
             {/* Map 4 thẻ dọc */}
 
             {blog.map((item, index) => {
-              return <ItemBlog key={index} item={item} />;
+              return <ItemBlog key={item} item={item} />;
             })}
 
             {/* Hết card */}

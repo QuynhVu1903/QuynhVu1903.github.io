@@ -6,7 +6,7 @@ interface IProps {
 
 const TodoNew = (props: IProps) => {
   const [valueInput, setValueInput] = useState("eric"); // đây là function, destructuring array
-  const { addNewToDo, searchName } = props;
+  const { addNewToDo} = props;
   // gọi func ở con
   const handleClick = () => {
     addNewToDo(valueInput);
@@ -15,7 +15,6 @@ const TodoNew = (props: IProps) => {
   };
   const handleOnChange = (name: string) => {
     setValueInput(name);
-    searchName(name);
   };
 
 

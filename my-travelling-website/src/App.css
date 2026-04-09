@@ -331,12 +331,10 @@
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 400;
 }
-#category > option {
-background: #ffffff66;
-  backdrop-filter: none; /* bỏ luôn vì container đã blur rồi */
-  border: none;
-  outline: none;
-  color: #ffffff;
+
+#category option {
+  background: #1a3530; /* màu đặc tối, không dùng rgba */
+  color: #fff;
   font-size: 18px;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 400;

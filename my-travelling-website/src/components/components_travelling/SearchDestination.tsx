@@ -1,6 +1,7 @@
 import { Search, Ship } from "lucide-react";
 import { useState } from "react";
 import "../../App.css";
+import CategorySelect from "./OptionsCategory";
 
 // interface IProps {
 //   addDestination: (name: string) => void;
@@ -14,12 +15,15 @@ const SearchDestination = () => {
   const handleClick = () => {
     alert("Destination: " + valueInput + "\n" + "Category: " + category);
     setValueInput("");
-    setCategory("");
+    // setCategory("");
     //mỗi một lần ấn add thì xóa giá trị ở input
   };
   const handleOnChange = (name: string) => {
     setValueInput(name);
     // addDestination(name);
+  };
+  const newCategory = (name: string) => {
+    setCategory(name);
   };
 
   // addNewToDo("eric")
@@ -45,19 +49,7 @@ const SearchDestination = () => {
             <Ship />
           </div>
           <div className="frame10-text">
-            <select
-              id="category"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            >
-              <option value="">Cruise category</option>
-              <option value="luxury">Luxury</option>
-              <option value="premium">Premium</option>
-              <option value="budget">Budget</option>
-              <option value="family">Family</option>
-              <option value="overnight">Overnight cruise</option>
-              <option value="day">Day cruise</option>
-            </select>
+            <CategorySelect newCategory={newCategory} />
           </div>
         </div>
       </div>
