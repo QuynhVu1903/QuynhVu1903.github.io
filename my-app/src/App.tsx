@@ -3,6 +3,12 @@ import TodoData from "./components/todo/TodoData";
 import TodoNew from "./components/todo/TodoNew";
 import reactLogo from "./assets/react.svg";
 import { useState } from "react";
+import Content from "./components/todo/Content";
+import ResizeWndow from "./components/todo/ResizeWindow";
+import Timers from "./components/todo/Timers";
+import CleanUpWithAvatar from "./components/todo/CleanUpWithAvatar";
+import CommentBox from "./realTime/CommentBox";
+
 export type Person = {
   address: string;
   country: string;
@@ -14,11 +20,14 @@ export type Person = {
 
 const App = () => {
   // giá trị khởi tạo là mảng rỗng
-  const [todoList, setTodoList] = useState([
+  const [todoList, setTodoList] = useState<{ id: Number; name: string }[]>([
     // { id: 1, name: "Learning React" },
     // { id: 2, name: "Watching Youtube" }
   ]);
-
+  const [show, setShow] = useState(false);
+  const [showSize, setShowSize] = useState(false);
+  const [showTime, setShowTime] = useState(false);
+  const [showFile, setShowFile] = useState(false);
   const addNewToDo = (name: string) => {
     const newTodo = {
       id: radomIntFromInterval(1, 1000000),
@@ -53,15 +62,36 @@ const App = () => {
     setTodoList(newTodo);
   };
 
-
-  const radomIntFromInterval = (min, max) => {
+  const radomIntFromInterval = (min: number, max: number): Number => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
   return (
     <div className="todo-container">
+      <div style={{ padding: 20 }}>
+        <button onClick={() => setShow(!show)}>Toggle</button>
+        {show && <Content />}
+      </div>
+
+      <div style={{ padding: 20 }}>
+        <button onClick={() => setShowSize(!showSize)}>Size</button>
+        {showSize && <ResizeWndow />}
+      </div>
+
+      <div style={{ padding: 20 }}>
+        <button onClick={() => setShowTime(!showTime)}>Count Time</button>
+        {showTime && <Timers />}
+      </div>
+      
+      <div style={{ padding: 20 }}>
+        <button onClick={() => setShowFile(!showFile)}>Click Me To Choose File</button>
+        {showFile && <CleanUpWithAvatar />}
+      </div>
+
+      <CommentBox />
+
       <div className="todo-title">Todo List</div>
-      <TodoNew addNewToDo={addNewToDo}/>
+      <TodoNew addNewToDo={addNewToDo} />
 
       {todoList.length > 0 ? (
         <TodoData
