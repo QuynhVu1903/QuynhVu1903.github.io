@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./postDetail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1">
+            <div class="iconTitle">
+                <div class="iconBlog">
+                    <h1><i class="fa-solid fa-blog"></i></h1>
+                </div>
+                <div class="title">
+                    <h1>POST DETAIL</h1>
+                </div>
+            </div>
+            <div class="box1Nhap">
+                <label for="list">Nhập ID</label><br>
+            </div>
+            <div class="box1List">
+                <input type="text" name="list" id="postId">
+                <button onclick="detail()">Search</button>
+            </div>
+        </div>
+        <!-- <div class="box3">
+            <h2>Hiển thị danh sách Post</h2>
+        </div> -->
+        <div class="box2">
+            <div class="h2Box">
+                <h2>Hiển thị chi tiết</h2>
+            </div>
+
+            <!-- <div id="table-container"></div> -->
+            <div class="post-card" id="postDetail" style="display: none;">
+                <!-- insideBox2 ở bên trái flex 3 -->
+                <div class="insideBox2"> 
+                    <div class="post-meta">
+                        <div><strong>ID:</strong> <span id="postID"></span></div>
+                        <div><strong>Người tạo:</strong> <span id="postAuthor"></span></div>
+                    </div>
+                    <div class="imgPost"><img id="postImage" src="" alt=""></div>
+                    
+
+                </div>
+                <div class="leftBox2">
+                    <div><h2 id="postTitle"></h2></div>
+
+                    <div class="post-content" id="postContent"></div>
+                    <div class="date">
+                        <div><strong>Ngày tạo:</strong> <span id="postCreated"></span></div>
+                        <div><strong>Ngày sửa:</strong> <span id="postUpdated"></span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script type="module" src="postDetail.js"></script>
+</body>
+
+</html>
+
+
+
+
+<!-- <div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Nội dung</th>
+            </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+    </table>
+</div> -->

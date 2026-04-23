@@ -1,0 +1,2078 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montez&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap");
+
+#root {
+  width: 100%;
+  height: auto;
+  background-color: #ffff;
+}
+
+.pic1 {
+  width: 100%;
+  height: auto;
+  /* 11143.89px; */
+  background-color: #ffff;
+}
+
+.headerPic1 {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f8f8f8;
+}
+
+.listLeft {
+  /* padding-top: 10px; */
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.listLeft1 {
+  border-right: solid 1px #999999;
+  padding-right: 20px;
+  height: 15px;
+  display: flex;
+  align-content: center;
+  gap: 6px;
+}
+
+.listLeft1-icon {
+  align-self: center;
+  font-size: 10px;
+  color: #0d0d0c;
+}
+
+.listLeft1-text {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  color: #0d0d0c;
+}
+
+.listLeft2 {
+  height: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.listLeft2Icon {
+  align-items: center;
+  font-size: 10px;
+  color: #0d0d0c;
+}
+
+.liftLeft2Text {
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  color: #0d0d0c;
+}
+.listRight {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  display: flex;
+  gap: 11px;
+  height: 31px;
+}
+.borderButton {
+  align-items: center;
+  display: flex;
+  border-radius: 20px;
+  border: solid 0.75px #e1e4e5;
+  gap: 4px;
+  padding: 8px 20px 8px 20px;
+}
+.borderButton:hover {
+  border: solid 0.75px #e8eaeb;
+  background-color: #e8eaeb;
+}
+.borderButton div {
+  align-items: center;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  color: #0d0d0c;
+  cursor: pointer;
+}
+.buttonDown {
+  align-self: center;
+  padding-top: 7px;
+}
+.frame305 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.frame305 div {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  color: #0d0d0c;
+  cursor: pointer;
+}
+.frame3051 {
+  border-right: solid 1px #999999;
+  padding-right: 20px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.frame3052 {
+  border-right: solid 1px #999999;
+  padding-right: 20px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Background */
+.backgroundPic1 {
+  height: 64px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffff;
+}
+.backgroundPic1Logo {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  min-width: 330px;
+  background-color: #0e47ab;
+  /* -webkit-mask-image: url(/mask.png); */
+  mask-image: url(/mask.png);
+  mask-repeat: no-repeat;
+}
+.backgroundPic1Logo img {
+  max-width: 234px;
+}
+.backgroundPic1-nav {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  align-items: center;
+}
+.backgroundPic1-nav a {
+  text-decoration: none;
+  color: #0d0d0c;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+}
+.backgroundPic1-nav > .firstA {
+  font-weight: 700;
+  color: #0e47ab;
+}
+.backgroundPic1-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
+  align-self: center;
+  background-color: #0e47ab;
+  width: 100px;
+  height: 25px;
+  align-items: center;
+  display: flex;
+  border-radius: 5px;
+  border: solid 1px #0e47ab;
+  gap: 10px;
+  padding: 8px 20px 8px 20px;
+}
+.backgroundPic1-link a {
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  color: #ffff;
+  font-size: 12px;
+}
+/* Phần tử cha để lớp nền k bị trôi */
+.contentPic1 {
+  position: relative;
+  overflow: hidden;
+  height: 1000px;
+  /* ........... */
+  display: flex;
+  justify-content: center;
+}
+/* Lớp 1: ảnh nền */
+.contentPic1::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: url("/public/bghl.png") center/cover no-repeat;
+  background-position-y: -100px;
+  transform: scale(1.05);
+  z-index: 0;
+}
+/* Lớp 2: màu tối phủ lên ảnh */
+.contentPic1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* chỉnh số này: 0.3 nhạt → 0.7 rất tối */
+  z-index: 1;
+}
+/* Nội dung text phải trên cả hai lớp */
+.contentPic1 div {
+  position: relative;
+  z-index: 2; /* tăng lên 2, cao hơn ::after */
+  /* color: white; */
+}
+.frame337 {
+  top: 243px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  width: 1240px;
+  height: 264px;
+}
+.frame322 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+.frame322-up {
+  font-family: "Montez", cursive;
+  font-weight: 400;
+  font-size: 64px;
+  color: #ffffff;
+}
+.frame322-down {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #ffffff;
+}
+.frame11 {
+  border-radius: 17.71px;
+  /* padding: 16px 24px 16px 24px; */
+  height: 84px;
+  gap: 36px;
+  display: flex;
+  background: #ffffff66;
+  width: 100%;
+  /* backdrop-filter: blur(2px); */
+  align-items: center;
+}
+.frame610 {
+  align-items: center;
+  flex: 9;
+  display: flex;
+  justify-content: start;
+  width: 1192px;
+  height: 52px;
+  padding-left: 32px;
+}
+.frame6 {
+  width: 462px;
+  display: flex;
+  gap: 12px;
+  border-right: solid 1px #ffffff;
+  padding-right: 20px;
+}
+.frame6 input {
+  background: transparent;
+  backdrop-filter: none; /* bỏ luôn vì container đã blur rồi */
+  width: 462px;
+  height: 52px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+}
+
+.frame6 input::placeholder {
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+}
+.frame6-icon {
+  align-self: center;
+  color: #ffffff;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+}
+.frame10-icon {
+  align-self: center;
+}
+.frame10-icon,
+.frame10-text {
+  color: #ffffff;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+#category {
+  background: transparent;
+  backdrop-filter: none; /* bỏ luôn vì container đã blur rồi */
+  width: 166px;
+  height: 52px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+}
+
+#category option {
+  background: #1a3530; /* màu đặc tối, không dùng rgba */
+  color: #fff;
+  font-size: 18px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+}
+.frame10 {
+  width: 462px;
+  display: flex;
+  padding-left: 50px;
+  gap: 12px;
+}
+.coolection-button {
+  flex: 1;
+}
+.coolection-button {
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 24px 5px 24px;
+  background-color: #ffffff;
+  gap: 10px;
+  width: 160px;
+  height: 40px;
+  border-radius: 50px;
+  border: solid 1px #ffffff;
+
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.coolection-button button {
+  width: 100%;
+  height: 100%;
+    background-color: #ffffff;
+    border: none;
+    font-weight: 700;
+    font-size: 18px;
+  backdrop-filter: none;
+  color: #005edc;
+  font-family: "Be Vietnam Pro", sans-serif;
+   cursor: pointer;
+}
+
+/* Pic2 */
+.rectangle {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden; /* quan trọng — cắt phần blur tràn ra ngoài */
+}
+
+.rectangle::before {
+  content: "";
+  position: absolute;
+  width: 1910px;
+  height: 1231px;
+  /* left: -200px;  */
+  border-radius: 20%;
+  /* -235 */
+  /* top: calc(50% - 1231px / 2 - 161.5px); */
+  top: calc(50% - 880px);
+  background: linear-gradient(
+    0deg,
+    rgba(14, 71, 171, 0) 4.04%,
+    rgba(19, 80, 188, 0.0855796) 52.41%,
+    rgba(32, 104, 229, 0.3) 100%
+  );
+
+  opacity: 0.4;
+  filter: blur(32px);
+  transform: matrix(1, 0, 0, -1, 0, 0); /* = scaleY(-1), lật gradient */
+  pointer-events: none; /* không chặn click */
+  z-index: 0;
+}
+
+/* Đảm bảo nội dung con nằm trên lớp nền */
+.rectangle > * {
+  position: relative;
+  z-index: 1;
+}
+.pic2 {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+}
+.title-pic2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.titleH2 {
+  width: 100%;
+  height: 48px;
+  font-weight: 700;
+  font-size: 36px;
+  color: #0e47ab;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+.titleP {
+  padding: 0 50px 0 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  width: 1240px;
+}
+.cards-container {
+  width: 100%;
+  height: 440px;
+  gap: 48px;
+  display: flex;
+  justify-content: center;
+}
+.cards-container > div {
+  border-radius: 8px 16px 16px 16px;
+  width: 381.33px;
+  height: 440px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 16px;
+  /* cách lề */
+}
+.cards-container > div > div {
+  position: relative;
+  z-index: 1;
+  background-color: #00000014; /* đen với 8% opacity */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari */
+  box-shadow: 0px 4px 48px 0px #1f5d9726; /* drop shadow: X=0, Y=4, Blur=48, Spread=0, màu #1F5D97 15% */
+  border-radius: 12px;
+  padding: 24px;
+  width: 349px;
+
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #ffffff;
+}
+/* Lớp tối 20% đè lên ảnh */
+.cards-container > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #00000033;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.cards-container > div {
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  position: relative; /* cần cho ::after */
+  border-radius: 8px 16px 16px 16px;
+  width: 381.33px;
+  height: 440px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 16px;
+  overflow: hidden; /* giữ ::after trong border-radius */
+}
+.card1Pic2 {
+  background-image: url("/public/laiva.png");
+  background-position-x: -77px;
+}
+.card2Pic2 {
+  background-image: url("/public/rentautua.png");
+  background-position-x: -77px;
+}
+.card3Pic2 {
+  background-image: url("/public/vene.png");
+  background-position-x: -146.67px;
+}
+
+/* Pic 3 */
+.pic3-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1440px;
+  padding: 0 100px 0px 100px;
+  gap: 10px;
+  background-color: #ffffff;
+}
+.pic3 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 1440px;
+  padding: 100px;
+}
+.pic3Title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px 0 100px;
+}
+.tour {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  color: #0e47ab;
+}
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: solid 1px #000000;
+}
+.viewAll {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #0d0d0c;
+}
+.arrowRight {
+  cursor: pointer;
+  color: #000000;
+  font-weight: 500;
+}
+.pic3 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.pic3Frame327 {
+  padding: 10px 100px 0 100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-between;
+  gap: 48px;
+  width: 1240px;
+  height: 1555px;
+}
+/* .frame307, .frame308, .frame309 {
+  width: 100%;
+  height: 486.187255859375px;
+  display: flex;
+  gap: 48px;
+} */
+
+.card327 {
+  width: 100%;
+  max-width: 375px;
+  height: 486px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 0.5px;
+  border-color: #bcc6d2;
+
+  border-style: solid;
+
+  border-color: #bcc6d2;
+}
+.img327 {
+  position: relative;
+  width: 100%;
+  max-width: 375px;
+  height: 214.19px;
+}
+.img327 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 8px 0px 0px;
+}
+/* Lớp gradient đè lên ảnh */
+.img327::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    #00000000 0%,
+    /* trong suốt ở trên */ #00000033 100% /* đen 20% ở dưới */
+  );
+}
+.container327 {
+  display: flex;
+  justify-content: center;
+  /* width: 100%; */
+  /* max-width: 375px; */
+  height: auto;
+  padding: 24px;
+  gap: 24px;
+}
+.frame6320 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.description327 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.description327 .desH3 {
+  /* padding-bottom: 8px; */
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  color: #000000;
+  margin: 0;
+
+  /* ẩn dòng thừa */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* số dòng muốn hiển thị */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.description327 .desP {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #6e7070;
+
+  /* ẩn dòng thừa */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* số dòng muốn hiển thị */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.frame6328 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 72px;
+}
+.price327 {
+  /* width: 101px; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.price327 .priceP {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  color: #6e7070;
+}
+.priceCost {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #0e47ab;
+}
+.CTA {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: right;
+}
+.iconHeart {
+  text-align: right;
+  cursor: pointer;
+}
+.iconHeart:hover {
+  color: #000000;
+}
+.buttonViewDatail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 70px;
+  height: 36px;
+  align-items: center;
+  display: flex;
+  border-radius: 4px;
+  border: solid 1px #0e47ab;
+  gap: 6px;
+  padding: 8px 20px 8px 20px;
+}
+.buttonViewDatail a {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #0e47ab;
+  font-size: 11px;
+}
+.buttonViewDatail a:hover {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #093480;
+  font-size: 11px;
+}
+
+/* Pic 4 */
+.pic4background {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+  gap: 100px;
+}
+/* Lớp 1: ảnh nền */
+.pic4background::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: url("/public/img086.png") center/cover no-repeat;
+  background-position-y: -100px;
+  transform: scale(1.05);
+  z-index: 0;
+}
+/* Lớp 2: màu tối phủ lên ảnh */
+.pic4background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* chỉnh số này: 0.3 nhạt → 0.7 rất tối */
+  z-index: 1;
+}
+/* Nội dung text phải trên cả hai lớp */
+.pic4background div,
+ul {
+  position: relative;
+  z-index: 2; /* tăng lên 2, cao hơn ::after */
+  /* color: white; */
+}
+.frame298 {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  padding-left: 100px;
+  gap: 22px;
+  /* flex: 6; */
+}
+.frame298 div {
+  text-align: left;
+}
+.vietnam298 {
+  font-family: "Montez", cursive;
+  font-weight: 400;
+  font-size: 36px;
+  color: #ffffff;
+}
+.heading298 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #ffffff;
+  line-height: 1.2; /* <-- giãn dòng khi xuống hàng */
+}
+.frame298 > ul {
+  padding-left: 23px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #ffffff;
+}
+.frame326 {
+  /* flex: 4; */
+  max-width: 800px;
+  max-height: 480px;
+}
+
+/* Pic 5 */
+
+.pic5 {
+  max-width: 100%;
+  max-height: 1217px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0 100px 100px 100px; */
+  padding-bottom: 100px;
+}
+.frame289Pic5 {
+  width: 1240px;
+  /* max-width: 100%; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.frame290 {
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  gap: 24px;
+  justify-content: start;
+}
+.tour290 {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #0e47ab;
+  font-size: 36px;
+  text-align: center;
+  line-height: 1.2;
+  padding: 0px 250px 0 250px;
+}
+.frame333 {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+}
+.frame333 ul li {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #111111;
+  font-size: 17px;
+  text-align: left;
+}
+.frame332 {
+  width: 1240px;
+  max-height: 727px;
+  display: flex;
+  gap: 22px;
+}
+.frame331 {
+  display: flex;
+  width: 756px;
+  height: 100%;
+  flex-direction: column;
+  gap: 24px;
+}
+.frame330 {
+  display: flex;
+  width: 100%;
+  height: 440px;
+  gap: 24px;
+}
+.cart1330 {
+  background-image: url(/public/2days.png);
+  background-position-x: -243px;
+  background-position-y: 1px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 366px;
+}
+.cart2330 {
+  background-image: url("/public/3days.png");
+  background-position-x: -156px;
+  background-position-y: 1px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 366px;
+}
+
+.frame30 {
+  position: relative;
+  z-index: 1;
+  background-color: #00000014; /* đen với 8% opacity */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari */
+  /* box-shadow: 0px 4px 48px 0px #1f5d9726; drop shadow: X=0, Y=4, Blur=48, Spread=0, màu #1F5D97 15% */
+  border-radius: 8px;
+  padding: 12px 24px 12px 24px;
+  margin: 20px;
+
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+}
+.frame30 > * {
+  padding: 0 20px 0 20px;
+}
+/* Lớp tối 20% đè lên ảnh */
+/* .cards-container > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #00000033;
+  border-radius: inherit;
+  z-index: 0;
+} */
+
+.cart1330,
+.cart2330,
+.cart331,
+.cart332 {
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* position: relative; cần cho ::after */
+  border-radius: 12px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 0px;
+  /* overflow: hidden; giữ ::after trong border-radius */
+}
+.title30 {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 17px;
+}
+.sub30 {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 13px;
+}
+.cart331 {
+  height: 200px;
+  width: 100%;
+  background-image: url("/public/catba.png");
+  /* background-position-x: -156px; */
+}
+
+.cart332 {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-image: url("/public/halong.png");
+  background-position-x: -243px;
+  background-position-y: 1px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 48px 0px rgba(31, 93, 151, 0.15);
+  overflow: hidden;
+}
+
+/* Lớp phủ mờ lên ảnh */
+.cart332::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* ← quan trọng: phủ toàn bộ */
+  background-color: rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+/* Đảm bảo nội dung con nằm trên lớp nền */
+.cart332 > * {
+  position: relative;
+  z-index: 2;
+}
+
+.button332 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
+  align-self: center;
+  background-color: #0e47ab;
+  width: 100px;
+  height: 25px;
+  align-items: center;
+  display: flex;
+  border-radius: 8px;
+  border: solid 1px #0e47ab;
+  gap: 10px;
+  padding: 8px 20px 8px 20px;
+  margin-left: 100px;
+  box-shadow: 0px 5px 12px 0px #8282821a;
+}
+.button332 a {
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  color: #ffff;
+  font-size: 12px;
+}
+.button332:hover {
+  background-color: #2f62bb;
+  border: solid 1px #2f62bb;
+}
+
+/* Pic6 */
+
+.pic6 {
+  max-width: 100%;
+  max-height: 1133px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 100px 100px 100px;
+}
+.section5 {
+  width: 1240px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.tourPic6 {
+  color: black;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 400px 200px;
+  gap: 20px;
+}
+
+.grid > div {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: start;
+  align-items: end;
+}
+
+/* Lớp gradient đè lên ảnh */
+.grid > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    #112f3800 0%,
+    /* trong suốt ở trên */ #00000033 100% /* đen 20% ở dưới */
+  );
+}
+.frame4 {
+  content: "";
+  position: absolute;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 4px;
+  padding: 16px;
+}
+.titlefr4 {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #ffff;
+  font-size: 24px;
+}
+.subfr4 {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #ffff;
+}
+
+/* Item lớn bên phải */
+.item-2 {
+  background-image: url(/public/grid2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+}
+
+/* Item trái trên */
+.item-1 {
+  background-image: url(/public/grid1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+/* 3 item dưới */
+.item-3 {
+  background-image: url(/public/grid3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 1 / 2;
+}
+
+.item-4 {
+  background-image: url(/public/grid4.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 2 / 3;
+}
+
+.item-5 {
+  background-image: url(/public/grid5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 3 / 4;
+}
+.tourPic6 > h2 {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #0e47ab;
+  font-size: 36px;
+}
+
+/* pic7 */
+.pic7 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 100%;
+  background-image: url(/public/pic7.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 973px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Lớp phủ mờ lên ảnh */
+.pic7::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* ← quan trọng: phủ toàn bộ */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+  /* background: linear-gradient(
+      0deg,
+  #000000,
+  #4E4E4E 0%
+  ); */
+}
+
+/* Đảm bảo nội dung con nằm trên lớp nền */
+.pic7 > * {
+  position: relative;
+  z-index: 2;
+}
+.frame329 {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 1250px;
+}
+.frame116 {
+  /* padding: 10px 100px 0 100px; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-between;
+  column-gap: 24px;
+  width: 1250px;
+  height: 100%;
+}
+
+.testimonials-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+  height: 256px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 24px;
+  border: 0.5px;
+  gap: 20px;
+  border-color: #bcc6d2;
+
+  border-style: solid;
+
+  border-color: #bcc6d2;
+}
+.avt {
+  width: 50px;
+  height: 50px;
+}
+.avt > img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.frame48 {
+  display: flex;
+  justify-content: start;
+  gap: 12px;
+}
+.nameJob h3 {
+  margin: 0;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #0e47ab;
+  font-size: 18px;
+  text-align: start;
+}
+.nameJob p {
+  margin: 0;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #6a6a6a;
+  font-size: 15px;
+}
+.text48 {
+  margin: 0;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+  font-size: 16px;
+  text-align: start;
+}
+.titlePic7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+.mainPic7 {
+  text-align: center;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 36px;
+}
+.subPic7 {
+  text-align: center;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* Pic 8 */
+
+.pic8 {
+  display: flex;
+  max-width: 100%;
+  height: 1013px;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+.frame65 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 80px 90px 80px 90px;
+  gap: 48px;
+  background: linear-gradient(0deg, #f7faff, #f3f9ff, #f3f8ff);
+  width: 1240px;
+  height: 813px;
+}
+.title65 {
+  width: 100%;
+}
+.title65 h2 {
+  text-align: center;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #0e47ab;
+  font-size: 36px;
+}
+.title65 p {
+  text-align: center;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #111111;
+  font-size: 14px;
+}
+.frame64 {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  width: 1060px;
+  height: 507px;
+}
+.card64 {
+  display: flex;
+  flex-direction: column;
+  width: 337px;
+  height: 506px;
+  padding: 16px;
+  gap: 16px;
+  background-color: #ffffff;
+  border-color: #dbeaff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 2px #e6f3ff; /* drop shadow: X=0, Y=4, Blur=48, Spread=0, màu #1F5D97 15% */
+}
+.img64 > img {
+  width: 305px;
+  height: 269px;
+  border-radius: 4px;
+}
+.infoPic8 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+  height: 100%;
+}
+.frame56 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.frame56 div {
+  text-align: start;
+}
+.title56 {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+  font-size: 17px;
+}
+.sub56 > ul {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #494949;
+  font-size: 12px;
+  margin: 0;
+  padding-left: 23px;
+}
+.frame6131 {
+  position: relative;
+}
+.line6131 {
+  width: 305px;
+  height: 1px;
+  background-color: #87baff;
+  position: relative;
+  text-align: center;
+}
+.star6131 {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 0 10px;
+  gap: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.costPic8 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  height: 51px;
+}
+.realCost {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #0e47ab;
+  font-size: 34px;
+}
+.strength {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #111111;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+/* Pic 9 */
+
+.pic9 {
+  display: flex;
+  max-width: 100%;
+  height: 744px;
+  justify-content: center;
+  align-items: center;
+  /* padding-top: 100px; */
+}
+.content9 {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 100px;
+  gap: 80px;
+  height: 100%;
+}
+.frame289 {
+  padding: 100px 0 0 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 653px;
+}
+.titlePic9 {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.vietnamAd {
+  font-weight: 400;
+  font-family: "Montez", cursive;
+  color: #1d1d1d;
+  font-size: 30px;
+}
+.tourCate {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #0e47ab;
+  font-size: 36px;
+}
+.withOver {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #111111;
+  font-size: 14px;
+}
+.bookTheBike {
+  background-color: #f0f5ff;
+  border-radius: 8px;
+  height: 245px;
+  gap: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.bgPic9 img {
+  width: 680px;
+  height: 644px;
+  border-radius: 800px 0 0 800px;
+}
+.input1,
+.input2 {
+  width: 100%;
+  height: 77px;
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+}
+.input1,
+.input2 > label {
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #333333;
+  font-size: 18px;
+}
+.input1 > input {
+  background-color: #ffffff;
+  padding: 14px 16px 14px 16px;
+  border-radius: 4px;
+  width: 505px;
+  height: 46px;
+  border: solid 0px #ffffff;
+}
+.input2 > input {
+  background-color: #ffffff;
+  padding: 14px 16px 14px 16px;
+  border-radius: 4px;
+  width: 505px;
+  height: 46px;
+  border: solid 0px #ffffff;
+}
+.button3 {
+  display: flex;
+  background-color: #0e47ab;
+  width: 83px;
+  height: 36px;
+  border-radius: 4px;
+  border: solid 1px #0e47ab;
+  justify-content: center;
+  align-items: center;
+}
+.button3 > div {
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+.button3:hover {
+  background-color: #3561ac;
+  width: 83px;
+  height: 36px;
+  border-radius: 4px;
+  border: solid 1px #3561ac;
+  cursor: pointer;
+}
+
+/* pic 10 */
+
+.pic10 {
+  display: flex;
+  max-width: 100%;
+  height: 805px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f7ff;
+  /* padding-top: 100px; */
+}
+.bgPic10 {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 805px;
+  gap: 30px;
+}
+.titlePic10 {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  width: 1240px;
+  gap: 1px;
+}
+.titlePic10 > h2 {
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  color: #0e47ab;
+  font-size: 36px;
+  text-align: start;
+}
+.titlePic10 > p {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #111111;
+  font-size: 14px;
+  text-align: start;
+}
+.frame142 {
+  width: 1240px;
+  height: 477px;
+  gap: 20px;
+  display: flex;
+}
+.health {
+  width: 667px;
+  height: 477px;
+  gap: 12px;
+}
+.imgHealth > img {
+  width: 667px;
+  height: 375px;
+  border-radius: 8px;
+}
+.frame861 {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.frame336 {
+  display: flex;
+  justify-content: space-between;
+  width: 335px;
+  gap: 10px;
+}
+.metaData {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.metaData div {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #6e7070;
+  font-size: 14px;
+}
+.metaLeft {
+  padding-right: 10px;
+}
+.metaRight {
+  padding-left: 10px;
+}
+.chip {
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #4a4f63;
+  font-size: 12px;
+  padding: 2px 12px 2px 12px;
+  border-radius: 4px;
+  background-color: #edf0f3;
+}
+.text336 {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #0e47ab;
+  font-size: 22px;
+  text-align: start;
+}
+.frame141 {
+  width: 553px;
+  height: 477px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.health-card {
+  display: flex;
+  width: 100%;
+  height: 107px;
+  gap: 12px;
+}
+.img-card > img {
+  width: 192px;
+  height: 107px;
+  border-radius: 4px;
+}
+.frame860 {
+  width: 349px;
+  height: 70px;
+  gap: 4px;
+  /* display: flex; */
+  flex-direction: column;
+}
+.container-card {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.meta-card {
+  display: flex;
+}
+.meta-card div {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #6e7070;
+  font-size: 12px;
+}
+.date-card {
+  padding-right: 10px;
+}
+.min-card {
+  padding-left: 10px;
+}
+.chip-card {
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 2px 12px 2px 12px;
+  border-radius: 4px;
+  background-color: #0e47ab;
+}
+.text-card {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+  font-size: 14px;
+  text-align: start;
+  /* ẩn dòng thừa */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* số dòng muốn hiển thị */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Pic 11 */
+.pic11 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 298px;
+  background-color: #ffffff;
+  gap: 24px;
+}
+.pic11a {
+  width: 100px;
+  height: 50px;
+}
+.pic11b {
+  width: 100px;
+  height: 98px;
+  border-radius: 8px;
+}
+.pic11c {
+  width: 100px;
+  height: 43px;
+}
+.pic11d {
+  width: 100px;
+  height: 41px;
+}
+.pic11e {
+  width: 100px;
+  height: 87px;
+  border-radius: 8px;
+}
+
+/* Pic 12 */
+.pic12 {
+  width: 100%;
+  height: 702px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+}
+.bgPic12 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  height: 634px;
+  gap: 48px;
+  padding: 80px 100px 80px 100px;
+}
+.linePic12 {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  padding-bottom: 50px;
+  border-bottom: solid 1px #e1e4e6;
+}
+.borderPic12 {
+  width: 100%;
+  height: 54px;
+  display: flex;
+  justify-content: space-between;
+}
+.frame6319 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.frame6319 h3 {
+  text-align: start;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #0e47ab;
+  font-size: 24px;
+  margin: 0px;
+}
+.frame6319 p {
+  text-align: start;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #6e7070;
+  font-size: 12px;
+}
+.formPic12 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.inputPic12 {
+  width: 311px;
+  height: 18px;
+  background-color: #ffffff;
+  border: solid 1px #c3c3c3;
+  padding: 8px 20px 8px 20px;
+}
+.formPic12 input:focus {
+  border-color: #007bff;
+}
+.buttonPic12 {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #0e47ab;
+  padding: 8px 20px 8px 20px;
+  width: 153px;
+  height: 36px;
+}
+.frame6317 {
+  display: flex;
+  justify-content: space-between;
+}
+.frame6317 div {
+  text-align: start;
+}
+.frame6312 {
+  display: flex;
+  justify-content: start;
+  gap: 18px;
+  flex-direction: column;
+  width: 485px;
+}
+.frame6312 h4 {
+  margin: 0;
+  font-weight: 600;
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #101113;
+  font-size: 16px;
+}
+.frame6312 p {
+  margin: 0;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #666666;
+  font-size: 12px;
+}
+.frame6308 {
+  display: flex;
+  gap: 8px;
+}
+.frame6308 div {
+  background-color: #f0f5ff;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  color: #0e47ab;
+}
+
+.frame6313 {
+  display: flex;
+  justify-content: start;
+  gap: 15px;
+  flex-direction: column;
+  width: 110px;
+  align-items: start;
+}
+.quick6313 {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #0e47ab;
+  font-size: 18px;
+}
+.list6313 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 12px;
+}
+.list6313 li {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #6e7070;
+  font-size: 12px;
+  padding-bottom: 12px;
+}
+.frame6314 {
+  display: flex;
+  justify-content: start;
+  gap: 15px;
+  flex-direction: column;
+  width: 300px;
+}
+.frame6314 p {
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #6e7070;
+  font-size: 12px;
+}
+.frame4020 {
+  display: flex;
+  justify-content: start;
+  /* gap: 16px; */
+  flex-direction: column;
+  width: 320px;
+}
+
+.icon6314 {
+  width: 24px;
+  height: 24px;
+  background-color: #f0f5ff;
+  border-radius: 15px;
+  color: #0e47ab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon6314 svg {
+  width: 14px;
+  height: 14px;
+  color: #0e47ab;
+}
+.container6314 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 12px;
+  width: 260px;
+}
+.frame6310,
+.frame6309,
+.frame6311,
+.frame6313b,
+.frame6312b {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 260px;
+  align-items: center;
+}
+.heading6310 {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+  font-size: 12px;
+}
+
+.frame4020 {
+  display: flex;
+  flex-direction: column;
+  /* gap: 16px; */
+  width: 320px;
+}
+.frame4018 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.form-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+.form-group input {
+  width: 300px;
+  padding: 14px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.form-group label {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  color: #888;
+  background: white;
+  padding: 0 4px;
+  transition: 0.2s ease;
+  pointer-events: none;
+}
+
+.form-group label span {
+  color: red;
+}
+
+/* Quan trọng */
+.form-group input:focus + label,
+.form-group input:valid + label {
+  top: -8px;
+  left: 10px;
+  font-size: 12px;
+  color: #333;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+}
+
+.button4020 {
+  align-items: center;
+  display: flex;
+  border-radius: 4px;
+  border: solid 1px #0e47ab;
+  gap: 4px;
+  padding: 8px 20px 8px 20px;
+  color: #0e47ab;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  background-color: #ffff;
+  cursor: pointer;
+  width: 108px;
+}
+.button4020:hover {
+  border: solid 1px #0b2147;
+  background-color: #ffffff;
+  color: #0b2147;
+  font-size: 12px;
+  width: 108px;
+}
+input {
+  color: black;
+}
+
+.container-cards {
+  display: flex;
+  padding: 16px 100px 16px 100px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  height: 68px;
+  position: relative;
+  background-image: url("public/bg-card.png");
+  background-size: cover;
+  z-index: 1;
+}
+
+.container-cards::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top/right/bottom/left: 0 */
+  background-color: rgba(14, 71, 171, 0.6);
+  z-index: 0;
+}
+.container-rights {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.rights-cards {
+  text-align: start;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 10px;
+  z-index: 3;
+}
+.payment-cards {
+  display: flex;
+  z-index: 3;
+  gap: 12px;
+  align-items: center;
+}
+.accept {
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 12px;
+  z-index: 4;
+}
+.cards-method {
+  padding-top: 5px;
+}

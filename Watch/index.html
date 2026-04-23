@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body class="w-full h-screen bg-slate-900">
+
+    <div class="max-w-6xl mx-auto flex flex-col gap-20">
+        <div class="flex justify-center text-7xl text-zinc-100 font-sans">
+            <h1 class="mt-20">⏱ Stopwatch</h1>
+        </div>
+        <div class="flex flex-col gap-10">
+            <div class="flex flex-col bg-white dark:bg-gray-600 shadow-sm pt-12 pb-12
+            ">
+                <div class="flex justify-center text-white text-9xl
+                
+                            font-mono" id="display">
+                    00:00:00
+                </div>
+
+                <div class="flex gap-9 flex justify-center text-white mt-12">
+
+                    <!-- Khi ấn start, pause xuất hiện, lap xuất hiện -->
+                    <!-- Khi ấn pause, start ẩm đi, lap không ấn được - disabled, chữ bị mờ đi và khi di chuột vào hiện hình cấm - cursor not allow, opacity-->
+                    <button id="lapBtn" class="opacity-40 cursor-not-allowed" disabled>LAP</button>
+                    <button id="startBtn" class="bg-indigo-500 hover:bg-indigo-700
+                                                    hover:scale-105
+                                                    transition-all duration-300
+                                                    text-white  rounded-[50%] w-24 h-24 bg-indigo-500
+                                                    text-2xl
+                                                    font-sans">START</button>
+                    <button id="pauseBtn" class="flex items-center justify-center
+                                                bg-indigo-500 hover:bg-indigo-700
+                                                hover:scale-105
+                                                transition-all duration-300
+                                                text-white  rounded-[50%] w-24 h-24 bg-indigo-500
+                                                text-2xl
+                                                font-sans hidden">PAUSE</button> <!--hidden để ẩn đi lúc đầu-->
+                    <button id="resetBtn" class="opacity-40 cursor-not-allowed font-sans" disabled>RESET</button>
+                </div>
+            </div>
+            <!-- Bảng Lap -->
+             <!-- Bảng mặc định hidden, chỉ hiện khi có lap đầu tiên -->
+    <div id="lapTableWrapper" class="hidden overflow-hidden rounded-xl border border-gray-700 max-w-12xl mx-auto">
+      <table class=" border-collapse table-fixed">
+        <thead class="bg-gray-800"> 
+          <!-- thêm chiều rộng cố định ở đây -->
+          <tr>
+            <th class="w-60 px-6 py-3 text-center text-gray-400 text-sm font-semibold uppercase tracking-wider">LAP</th>
+            <th class="w-60 px-6 py-3 text-center text-gray-400 text-sm font-semibold uppercase tracking-wider">TIME</th>
+            <th class="w-60 px-6 py-3 text-center text-gray-400 text-sm font-semibold uppercase tracking-wider">TOTAL TIME</th>
+          </tr>
+        </thead>
+        <tbody id="laps" class=" bg-gray-900">
+          <!-- divide-y divide-gray-700 cái này sẽ tự động vẽ border-top cho mọi hàng trừ
+           hàng đầu nên nó sẽ bị nháy-->
+          <!-- thêm <tr> vào đây -->
+        </tbody>
+      </table>
+    </div>
+    </div>
+    </div>
+
+    <script src="./index.js"></script>
+  
+</body>
+
+</html>

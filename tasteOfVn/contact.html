@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Taste of Vietnam</title>
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="item1">
+    <img class="logo" src="img/Logo1.png" alt="Taste of Vietnam Logo" />
+    <h1>TASTE OF VIETNAM</h1>
+    <p class="subtitle">Heritage on a Plate</p>
+    <div id="clock"></div>
+  </header>
+
+  <!-- ===== MENU ===== -->
+ 
+
+  <script src="js/clock.js"></script>
+
+  <!-- ===== MAIN ===== -->
+  <main class="item3">
+    <section class="hero-contact">
+      <h2>CONTACT US</h2>
+      <p>We’d love to hear from you! Whether you have questions, feedback, or collaboration ideas, 
+      feel free to get in touch with us using the form below.</p>
+    </section>
+<div class="back-home">
+  <a href="index.html" class="back-button">← Back to Home Page</a>
+</div>
+    <section class="contact-section">
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form action="success.html"> <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-map">
+        <h3>Find Us</h3>
+        <iframe 
+           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.8247012398448!2d24.93777087680516!3d60.2003759817734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46920a59929281a9%3A0x7d251f11e03c1585!2sHaaga-Helia%20University%20of%20Applied%20Sciences%2C%20Pasila%20Campus!5e0!3m2!1svi!2sfi!4v1684501234567!5m2!1svi!2sfi"
+           width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+ <footer class="item5">
+    © 2025 Taste of Vietnam. All rights reserved.
+  </footer>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var requiredFields = document.querySelectorAll('[required]');
+
+    requiredFields.forEach(function(field) {
+        
+        // 1. Reset thông báo lỗi khi người dùng bắt đầu nhập (để cho phép gửi form)
+        field.addEventListener('input', function() {
+            field.setCustomValidity('');
+        });
+        
+        // 2. Thiết lập và hiển thị thông báo lỗi tùy chỉnh bằng tiếng Anh
+        field.addEventListener('invalid', function(event) {
+            // Ngăn thông báo mặc định (tiếng Việt)
+            event.preventDefault(); 
+            
+            // Thiết lập thông báo lỗi tùy chỉnh
+            if (field.validity.valueMissing) {
+                field.setCustomValidity('Please fill out this field.');
+            } 
+            else if (field.type === 'email' && field.validity.typeMismatch) {
+                field.setCustomValidity('Please enter a valid email address.');
+            } 
+            else {
+                field.setCustomValidity('The value entered is invalid.'); 
+            }
+
+            // *** Lệnh QUAN TRỌNG: Buộc trình duyệt hiển thị thông báo lỗi đã được tùy chỉnh
+            field.reportValidity(); 
+        });
+    });
+});
+</script>
+</body>
+</html>
