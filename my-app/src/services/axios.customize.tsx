@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Set config defaults when creating the instance - trước khi gửi request cho backend
 const instance = axios.create({
-  baseURL: 'http://localhost:8080',
+  baseURL: import.meta.env.DB_VITE_BACKEND_URL
 });
 
 // Alter defaults after instance has been created
@@ -20,7 +20,7 @@ instance.interceptors.request.use(
   }
 );
 
-// Add a response interceptor - trước khi trả ra phản hồi cho frontend
+// Add a response interceptor - trước khi trả ra phản hồi (res) (su dung intercepter de format data truoc khi tra ve) cho frontend
 instance.interceptors.response.use(
   function (response) {
     // Any status code that lies within the range of 2xx causes this function to trigger
