@@ -27,7 +27,7 @@ const UserForm = (props: Lprops) => {
       });
       //Tạo mới thành công => đóng modal
       setIsModalOpen(false)
-      await loadUser();
+      await loadUser();   
     } else {
       api.error({
         message: "Error create user",
