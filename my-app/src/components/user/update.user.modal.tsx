@@ -1,7 +1,8 @@
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import { Input, Modal, notification } from "antd";
-import { createUserAPI } from "../../services/api.service";
-import type { DataType } from "./user.table";
+import { updateUserAPI } from "../../services/api.service";
+import type { DataType } from "../../pages/users";
+
 
 type Props = {
   isModalUpdateOpen: boolean;
@@ -9,6 +10,8 @@ type Props = {
 
   dataUpdate: DataType | null;
   setDataUpdate: Dispatch<SetStateAction<DataType | null>>;
+
+  loadUser: () => Promise<void>;
 };
 const UpdateUserModal = (props: Props) => {
   const [id, setId] = useState("");
@@ -17,8 +20,13 @@ const UpdateUserModal = (props: Props) => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { isModalUpdateOpen, setIsModalUpdateOpen, dataUpdate, setDataUpdate } =
-    props;
+  const {
+    isModalUpdateOpen,
+    setIsModalUpdateOpen,
+    dataUpdate,
+    setDataUpdate,
+    loadUser,
+  } = props;
 
   useEffect(() => {
     console.log("check dataUpdate props");
@@ -33,21 +41,21 @@ const UpdateUserModal = (props: Props) => {
 
   const [api, contextHolder] = notification.useNotification();
   const handleSubmitBtn = async () => {
-    const res = await createUserAPI(fullName, email, password, phone);
+    const res = await updateUserAPI(id, fullName, phone); // thứ tự truyền vào (lần lượt), giá trị của tham số
+    // là string, boolean.. chứ không quan trọng tên giống hay k
+
     if (res.data) {
-      // nếu biến res.data tồn tại thì check
-      //tiếp res.data.data có tồn tại hay không
-      //dùng antd, nếu có data trả về thì bắn ra thông báo:
+      // nếu biến res.data tồn tại thì báo
       api.success({
-        message: "create user",
-        description: "Tạo user thành công",
+        message: "Update user",
+        description: "Cập nhật thành công",
       });
       //Tạo mới thành công => đóng modal
       setIsModalUpdateOpen(false);
-      //   await loadUser();
+      await loadUser();
     } else {
       api.error({
-        message: "Error create user",
+        message: "Error update user",
         description: JSON.stringify(res.message),
       });
     }
