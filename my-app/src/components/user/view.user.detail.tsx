@@ -16,23 +16,34 @@ type Props = {
 };
 
 const ViewUserDetail = (props: Props) => {
-  const [selectedFile, setSelectedFile] = useState<NonNullable<File>>(); // lưu file vừa upload
-  const [preview, setPreview] = useState(); // đường link URL để hiển thị file
+  const [selectedFile, setSelectedFile] = useState(null); // lưu file vừa upload
+  const [preview, setPreview] = useState(null); // đường link URL để hiển thị file
 
   const { dataDetail, setDataDetail, isDetailOpen, setIsDetailOpen } = props;
   console.log("check dataDetail ", dataDetail);
   const handleOnchangeFile = (event: ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files || event.target.files.length === 0) {
+      setSelectedFile(null);
+      setPreview(null);
       return; // thoát khỏi funct này
     }
 
     // I've kept this example simple by using the first image instead of multiple
     const file = event.target.files[0];
     if (file) {
-      setSelectedFile(file);
+      setSelectedFile(file); // react lưu lại file vừa upload
+      setPreview(URL.createObjectURL(file));
     }
-    console.log("check file: ", file);
   };
+
+  const handleUpdateUserAvatar = () => {
+    //step 1: upload file
+    console.log("check file: ", selectedFile)
+    //update lại user: avt mới sẽ được lưu vào api, sau đó fetch api để cập nhật avt mới
+  }
+
+  console.log("check file: ", preview);
+
   return (
     <Drawer
       width={"30vw"}
@@ -46,7 +57,7 @@ const ViewUserDetail = (props: Props) => {
       {dataDetail ? (
         <>
           <div
-            style={{ display: "flex", gap: "40px", flexDirection: "column" }}
+            style={{ display: "flex", gap: "8px", flexDirection: "column" }}
           >
             <div style={{ display: "flex", gap: "40px" }}>
               <div
@@ -101,30 +112,71 @@ const ViewUserDetail = (props: Props) => {
                   flexDirection: "column",
                 }}
               >
-                <label
+                <div
                   style={{
-                    textAlign: "right",
-                    display: "block",
-                    width: "fit-content",
-                    marginTop: "15px",
-                    padding: "5px 10px",
-                    background: "#3188e6",
-                    color: "#FFFF",
-                    borderRadius: "5px",
-                    cursor: "pointer",
+                    display: "flex",
+                    // justifyContent: "right",
+                    paddingLeft: "20px",
                   }}
-                  htmlFor="btnUpload"
                 >
-                  Upload Avatar
-                </label>
-                <input
-                  type="file"
-                  hidden
-                  id="btnUpload"
-                  onChange={handleOnchangeFile}
-                />
+                  <label
+                    style={{
+                      textAlign: "right",
+                      display: "block",
+                      width: "fit-content",
+                      marginTop: "15px",
+                      padding: "5px 10px",
+                      background: "#3188e6",
+                      color: "#FFFF",
+                      borderRadius: "5px",
+                      cursor: "pointer",
+                    }}
+                    htmlFor="btnUpload"
+                  >
+                    Upload Avatar
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type="file"
+                    hidden
+                    id="btnUpload"
+                    onChange={handleOnchangeFile}
+                  />
+                </div>
               </div>
-              {/* <div style={{ display: "flex", justifyContent: "right" }}><Button type="primary">Upload Avatar</Button></div> */}
+              {preview && (
+                <>
+                  <div style={{ display: "flex", justifyContent: "right", flexDirection:"column", gap: "20px"}}>
+                    <div 
+                      style={{
+                        marginTop: "10px",
+                        height: "150px",
+                        width: "150px",
+                        border: " 1px solid #ccc",
+                        borderRadius: "50%",
+                        
+                      }}
+                    >
+                      <img
+                        style={{
+                          borderRadius: "50%",
+                          objectFit: "contain",
+                          height: "100%",
+                          width: "100%",
+                        }}
+                        src={preview}
+                      />
+                    </div>
+                    <div style={{paddingLeft: "40px"}}>
+                      <Button type='primary'
+                      onClick={() => {handleUpdateUserAvatar()}}
+                      >Save</Button></div>
+                    
+                  </div>
+                  
+                </>
+              )}
             </div>
           </div>
         </>
