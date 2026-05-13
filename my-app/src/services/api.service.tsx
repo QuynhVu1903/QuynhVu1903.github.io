@@ -1,7 +1,12 @@
 // import axios from "axios";
 import axios from "./axios.customize";
 
-const createUserAPI = (fullName: string, email: string, password: string, phone: string) => {
+const createUserAPI = (
+  fullName: string,
+  email: string,
+  password: string,
+  phone: string,
+) => {
   const URL_BACKEND = "/api/v1/user";
   const data = {
     fullName: fullName,
@@ -25,11 +30,26 @@ const updateUserAPI = (_id: string, fullName: string, phone: string) => {
 const deleteUserAPI = (id: string) => {
   const URL_BACKEND = `/api/v1/user/${id}`;
   return axios.delete(URL_BACKEND);
-}
+};
 
-const fetchAllUserAPI = () => {{
-   const URL_BACKEND = "/api/v1/user";
-  return axios.get(URL_BACKEND);
-}}
-
+const fetchAllUserAPI = () => {
+  {
+    const URL_BACKEND = "/api/v1/user";
+    return axios.get(URL_BACKEND);
+  }
+};
+const handleUploadFile = (file, folder) => {
+  //file: file muốn lưu, folder: file muốn lưu vào folder nào
+  const URL_BACKEND = `/api/v1/file/upload`;
+  const config = {
+    headers: {
+      "upload-type": folder,
+      "Content-Type": "multipart/form-data",
+    },
+  };
+  const bodyFormData = new FormData();
+  //truyền vào key và value - tên biến và giá trị (file input truyền vào) của nó
+  bodyFormData.append("fileImg", file);
+  return axios.post(URL_BACKEND, bodyFormData, config);
+};
 export { createUserAPI, updateUserAPI, fetchAllUserAPI, deleteUserAPI };
