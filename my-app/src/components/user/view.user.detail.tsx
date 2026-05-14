@@ -1,6 +1,7 @@
-import { Button, Drawer } from "antd";
+import { Button, Drawer, notification } from "antd";
 import type { DataType } from "../../pages/users";
 import { useState, type ChangeEvent } from "react";
+import { handleUploadFile, updateUserAvatarAPI } from "../../services/api.service";
 
 type Props = {
   //   isModalUpdateOpen: boolean;
@@ -12,14 +13,14 @@ type Props = {
   isDetailOpen: boolean;
   setIsDetailOpen: React.Dispatch<React.SetStateAction<boolean>>;
 
-  //   loadUser: () => Promise<void>;
+  loadUser: () => Promise<void>
 };
 
 const ViewUserDetail = (props: Props) => {
-  const [selectedFile, setSelectedFile] = useState(null); // lưu file vừa upload
-  const [preview, setPreview] = useState(null); // đường link URL để hiển thị file
-
-  const { dataDetail, setDataDetail, isDetailOpen, setIsDetailOpen } = props;
+  const [selectedFile, setSelectedFile] = useState<File | null>(null); // lưu file vừa upload. File là object chứa thông tin thực của file
+  const [preview, setPreview] = useState<string | null>(null); // đường link URL để hiển thị file. Hiển thị ảnh trong <img>  (blob URL)
+  const [api, contextHolder] = notification.useNotification();
+  const { dataDetail, setDataDetail, isDetailOpen, setIsDetailOpen, loadUser } = props;
   console.log("check dataDetail ", dataDetail);
   const handleOnchangeFile = (event: ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files || event.target.files.length === 0) {
@@ -36,15 +37,49 @@ const ViewUserDetail = (props: Props) => {
     }
   };
 
-  const handleUpdateUserAvatar = () => {
+  const handleUpdateUserAvatar = async () => {
+    if (!dataDetail) return;
+    // quá trình gọi api là bất đồng bộ
     //step 1: upload file
-    console.log("check file: ", selectedFile)
-    //update lại user: avt mới sẽ được lưu vào api, sau đó fetch api để cập nhật avt mới
-  }
+    const resUpload = await handleUploadFile(selectedFile, "avatar"); // selectedfile là file mình upload
+    if (resUpload.data) {
+      //success
+      const newAvatar = resUpload.data.fileUploaded;
+      //update lại user: avt mới sẽ được lưu vào api, sau đó fetch api để cập nhật avt mới
+      //mỗi lần gọi API đều phải dùng await
+      const resUpdateAvatar = await updateUserAvatarAPI(newAvatar, dataDetail._id, dataDetail.fullName, dataDetail.phone )
+      if(resUpdateAvatar.data){
+        //đóng xem chi tiết
+        setIsDetailOpen(false);
+        //clear data react
+        setSelectedFile(null);
+        setPreview(null);
+        await loadUser();
+
+        api.success({
+        message: "Update user avatar",
+        description: "Cập nhật avatar thành công",
+      });
+      }else {
+        api.error({
+        message: "Error upload avatar",
+        description: JSON.stringify(resUpdateAvatar.data?.message),
+      });
+      }
+    } else {
+      //failed
+      api.error({
+        message: "Error upload file",
+        description: JSON.stringify(resUpload.data?.message),
+      });
+    }
+    console.log("check resUpload", resUpload);
+  };
 
   console.log("check file: ", preview);
 
   return (
+    
     <Drawer
       width={"30vw"}
       title="Chi tiết User"
@@ -54,11 +89,10 @@ const ViewUserDetail = (props: Props) => {
       }}
       open={isDetailOpen}
     >
+      {contextHolder}
       {dataDetail ? (
         <>
-          <div
-            style={{ display: "flex", gap: "8px", flexDirection: "column" }}
-          >
+          <div style={{ display: "flex", gap: "8px", flexDirection: "column" }}>
             <div style={{ display: "flex", gap: "40px" }}>
               <div
                 style={{
@@ -147,15 +181,21 @@ const ViewUserDetail = (props: Props) => {
               </div>
               {preview && (
                 <>
-                  <div style={{ display: "flex", justifyContent: "right", flexDirection:"column", gap: "20px"}}>
-                    <div 
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "right",
+                      flexDirection: "column",
+                      gap: "20px",
+                    }}
+                  >
+                    <div
                       style={{
                         marginTop: "10px",
                         height: "150px",
                         width: "150px",
                         border: " 1px solid #ccc",
                         borderRadius: "50%",
-                        
                       }}
                     >
                       <img
@@ -168,13 +208,17 @@ const ViewUserDetail = (props: Props) => {
                         src={preview}
                       />
                     </div>
-                    <div style={{paddingLeft: "40px"}}>
-                      <Button type='primary'
-                      onClick={() => {handleUpdateUserAvatar()}}
-                      >Save</Button></div>
-                    
+                    <div style={{ paddingLeft: "40px" }}>
+                      <Button
+                        type="primary"
+                        onClick={() => {
+                          handleUpdateUserAvatar();
+                        }}
+                      >
+                        Save
+                      </Button>
+                    </div>
                   </div>
-                  
                 </>
               )}
             </div>
