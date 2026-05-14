@@ -39,6 +39,14 @@ const UserTable = (props: Dprops) => {
   };
   const columns: TableProps<DataType>["columns"] = [
     {
+      title: "STT",
+      render: (_, record, index) => {
+        console.log("check index:", index);
+        //render từng record (bản ghi của các id)
+        return <>{index + 1}</>;
+      },
+    },
+    {
       title: "Id",
       dataIndex: "_id", //name: key
       render: (_, record) => {
@@ -96,6 +104,7 @@ const UserTable = (props: Dprops) => {
 
   return (
     <>
+      {contextHolder}
       <Table<DataType>
         columns={columns}
         dataSource={dataUsers}
@@ -113,6 +122,7 @@ const UserTable = (props: Dprops) => {
         setDataDetail={setDataDetail}
         isDetailOpen={isDetailOpen}
         setIsDetailOpen={setIsDetailOpen}
+        loadUser={loadUser}
       />
     </>
   );
