@@ -1,3 +1,4 @@
+import { Button, Result } from "antd";
 import { useRouteError, isRouteErrorResponse, Link } from "react-router-dom";
 
 export default function ErrorPage() {
@@ -14,15 +15,18 @@ export default function ErrorPage() {
 
   return (
     <div>
-      <h1>Oops!</h1>
-      <p>Sorry, something went wrong.</p>
-      <i>{message}</i>
-
-      <div>
-        <Link to="/">
-          <span>Back to homepage</span>
-        </Link>
-      </div>
+      <Result
+        status="403"
+        title="403"
+        subTitle="Sorry, you are not authorized to access this page."
+        extra={
+          <Button type="primary">
+            <Link to="/">
+              <span>Back to homepage</span>
+            </Link>
+          </Button>
+        }
+      />
     </div>
   );
 }
