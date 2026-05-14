@@ -34,11 +34,11 @@ const deleteUserAPI = (id: string) => {
 
 const fetchAllUserAPI = () => {
   {
-    const URL_BACKEND = "/api/v1/user";
+    const URL_BACKEND = "/api/v1/user?current=1&pageSize=1";
     return axios.get(URL_BACKEND);
   }
 };
-const handleUploadFile = (file, folder) => {
+const handleUploadFile = (file: string, folder: string) => {
   //file: file muốn lưu, folder: file muốn lưu vào folder nào
   const URL_BACKEND = `/api/v1/file/upload`;
   const config = {
@@ -52,4 +52,28 @@ const handleUploadFile = (file, folder) => {
   bodyFormData.append("fileImg", file);
   return axios.post(URL_BACKEND, bodyFormData, config);
 };
-export { createUserAPI, updateUserAPI, fetchAllUserAPI, deleteUserAPI };
+
+const updateUserAvatarAPI = (
+  avatar: string,
+  _id: string,
+  fullName: string,
+  phone: string,
+) => {
+  const URL_BACKEND = "/api/v1/user";
+  const data = {
+    _id: _id,
+    avatar: avatar,
+    fullName: fullName,
+    phone: phone,
+  };
+  return axios.put(URL_BACKEND, data);
+};
+
+export {
+  createUserAPI,
+  updateUserAPI,
+  fetchAllUserAPI,
+  deleteUserAPI,
+  handleUploadFile,
+  updateUserAvatarAPI,
+};
