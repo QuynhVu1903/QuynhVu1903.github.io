@@ -10,10 +10,23 @@ import { deleteUserAPI } from "../../services/api.service";
 type Dprops = {
   dataUsers: DataType[];
   loadUser: () => Promise<void>;
+  current: number;
+  pageSize: number;
+  total: number;
+  setCurrent: React.Dispatch<React.SetStateAction<number>>;
+  setPageSize: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const UserTable = (props: Dprops) => {
-  const { dataUsers, loadUser } = props;
+  const {
+    dataUsers,
+    loadUser,
+    current,
+    pageSize,
+    total,
+    setCurrent,
+    setPageSize,
+  } = props;
   const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
   const [dataUpdate, setDataUpdate] = useState<DataType | null>(null);
   const [dataDetail, setDataDetail] = useState<DataType | null>(null);
@@ -101,6 +114,9 @@ const UserTable = (props: Dprops) => {
       ),
     },
   ];
+  const onChange = (pagination, filters, sorter, extra) => {
+    console.log("check all: ", { pagination, filters, sorter, extra });
+  };
 
   return (
     <>
@@ -109,6 +125,21 @@ const UserTable = (props: Dprops) => {
         columns={columns}
         dataSource={dataUsers}
         rowKey={"_id"}
+        pagination={{
+          current: current, //đang đứng tại trang bao nhiêu
+          pageSize: pageSize, //lấy tối đa bao nhiêu phần tử 1 lần
+          showSizeChanger: true,
+          total: total, // tổng số phần tử
+          showTotal: (total, range) => {
+            return (
+              <div>
+                {" "}
+                {range[0]}-{range[1]} trên {total} users
+              </div>
+            );
+          },
+        }}
+        onChange={onChange}
       />
       <UpdateUserModal
         isModalUpdateOpen={isModalUpdateOpen}
