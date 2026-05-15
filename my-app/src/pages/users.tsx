@@ -20,21 +20,40 @@ export interface DataType {
 
 const UsersPage = () => {
   const [dataUsers, setDataUsers] = useState([]);
+  const [current, setCurrent] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
+  const [total, setTotal] = useState(0); //tổng số phần tử để mặc định là 0 vì chưa gọi API 
 
   useEffect(() => {
     loadUser(); // chỉ chạy 1 lần
   }, []);
 
-  const loadUser = async () => {
-    const res = await fetchAllUserAPI(); //chờ fetchAllUserAPI thực hiện xong rồi trả vào biến res
-    setDataUsers(res.data);
+  const loadUser = async () => { 
+    //mặc định mỗi một lần gọi tới loadUser sẽ lấy current, pageSize dựa vào state của cha 
+    const res = await fetchAllUserAPI(current, pageSize); //chờ fetchAllUserAPI thực hiện xong rồi trả vào biến res
+    if(res.data){
+      setDataUsers(res.data.result);
+      //mấy cái ở dưới này bật F12, xem fetch, preview để biết trong data của res (backend) có những key value gì
+      setCurrent(res.data.meta.current);
+      setPageSize(res.data.meta.pageSize);
+      setTotal(res.data.meta.total);
+      //có tham số rồi thì truyền xuống cho component con
+    }
+    
   };
 
   return (
     <div style={{ padding: "20px" }}>
       <UserForm loadUser={loadUser} />
       <UserTable dataUsers={dataUsers} 
-                 loadUser={loadUser}/>
+                 loadUser={loadUser}
+                 current={current}
+                 pageSize={pageSize}
+                 total={total}
+                 setCurrent={setCurrent}
+                 setPageSize={setPageSize}
+                 />
+
     </div>
   );
 };
