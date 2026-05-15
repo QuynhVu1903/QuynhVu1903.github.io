@@ -3,7 +3,6 @@ import { useRouteError, isRouteErrorResponse, Link } from "react-router-dom";
 
 export default function ErrorPage() {
   const error = useRouteError();
-  console.error(error);
 
   let message = "Unknown error";
 
@@ -17,8 +16,8 @@ export default function ErrorPage() {
     <div>
       <Result
         status="403"
-        title="403"
-        subTitle="Sorry, you are not authorized to access this page."
+        title="Oops!"
+        subTitle={message}
         extra={
           <Button type="primary">
             <Link to="/">
