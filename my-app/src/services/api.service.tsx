@@ -32,9 +32,9 @@ const deleteUserAPI = (id: string) => {
   return axios.delete(URL_BACKEND);
 };
 
-const fetchAllUserAPI = () => {
+const fetchAllUserAPI = (current: number, pageSize: number) => {
   {
-    const URL_BACKEND = "/api/v1/user?current=1&pageSize=1";
+    const URL_BACKEND = `/api/v1/user?current=${current}&pageSize=${pageSize}`;
     return axios.get(URL_BACKEND);
   }
 };
