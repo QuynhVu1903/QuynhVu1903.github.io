@@ -21,12 +21,13 @@ export interface DataType {
 const UsersPage = () => {
   const [dataUsers, setDataUsers] = useState([]);
   const [current, setCurrent] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(5);
   const [total, setTotal] = useState(0); //tổng số phần tử để mặc định là 0 vì chưa gọi API 
 
+  //mỗi một lần biến current thay đổi thì sẽ load lại data trang
   useEffect(() => {
     loadUser(); // chỉ chạy 1 lần
-  }, []);
+  }, [current, pageSize]);
 
   const loadUser = async () => { 
     //mặc định mỗi một lần gọi tới loadUser sẽ lấy current, pageSize dựa vào state của cha 
@@ -41,7 +42,7 @@ const UsersPage = () => {
     }
     
   };
-
+  console.log("check page: ", pageSize)
   return (
     <div style={{ padding: "20px" }}>
       <UserForm loadUser={loadUser} />

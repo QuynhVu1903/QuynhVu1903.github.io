@@ -31,7 +31,7 @@ const UserForm = (props: Lprops) => {
     } else {
       api.error({
         message: "Error create user",
-        description: JSON.stringify(res.message),
+        description: JSON.stringify(res.data?.message),
       });
     }
 

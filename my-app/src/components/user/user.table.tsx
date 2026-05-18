@@ -6,6 +6,12 @@ import { useState } from "react";
 import ViewUserDetail from "./view.user.detail";
 import type { DataType } from "../../pages/users";
 import { deleteUserAPI } from "../../services/api.service";
+import type {
+  TablePaginationConfig,
+  FilterValue,
+  SorterResult,
+  TableCurrentDataSource,
+} from "antd/es/table/interface";
 
 type Dprops = {
   dataUsers: DataType[];
@@ -46,7 +52,7 @@ const UserTable = (props: Dprops) => {
     } else {
       api.error({
         message: "Error delete user",
-        description: JSON.stringify(res.message),
+        description: JSON.stringify(res.data?.message),
       });
     }
   };
@@ -56,7 +62,7 @@ const UserTable = (props: Dprops) => {
       render: (_, record, index) => {
         console.log("check index:", index);
         //render từng record (bản ghi của các id)
-        return <>{index + 1}</>;
+        return <>{(index + 1) + (current-1)*pageSize}</>;
       },
     },
     {
@@ -114,7 +120,27 @@ const UserTable = (props: Dprops) => {
       ),
     },
   ];
-  const onChange = (pagination, filters, sorter, extra) => {
+  const onChange = (
+    pagination: TablePaginationConfig,
+    filters: Record<string, FilterValue | null>,
+    sorter: SorterResult<DataType> | SorterResult<DataType>[],
+    extra: TableCurrentDataSource<DataType>,
+  ) => {
+    // nếu thay đổi trang (biến current)
+    // xét TH nếu có pagination và current , nếu có xét điều kiện biến current của trang
+    // hiện tại click (vd trangg 3) với biến current ở trang cũ của React (vd trang 1)
+    if(pagination && pagination.current){
+      if(pagination.current !== current){
+        setCurrent(pagination.current)
+      }
+    }
+    
+    //nếu thay đổi tổng số phần tử trong 1 trang
+    if(pagination && pagination.pageSize){
+      if(pagination.pageSize !== pageSize){
+        setPageSize(pagination.pageSize)
+      }
+    }
     console.log("check all: ", { pagination, filters, sorter, extra });
   };
 

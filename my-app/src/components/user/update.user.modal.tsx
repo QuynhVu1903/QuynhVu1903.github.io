@@ -56,7 +56,7 @@ const UpdateUserModal = (props: Props) => {
     } else {
       api.error({
         message: "Error update user",
-        description: JSON.stringify(res.message),
+        description: JSON.stringify(res.data?.message),
       });
     }
   };
