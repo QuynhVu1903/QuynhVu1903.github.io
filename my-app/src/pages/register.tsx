@@ -1,4 +1,4 @@
-import { Input, Form, Button, notification } from "antd";
+import { Input, Form, Button, notification, Row, Col } from "antd";
 import { registerUserAPI } from "../services/api.service";
 import { useNavigate } from "react-router-dom";
 
@@ -45,16 +45,13 @@ const RegisterPage = () => {
       layout="vertical"
       name="basic"
       onFinish={onFinish}
+      style={{margin: "10px"}}
       // onFinishFailed={onFinishFailed}
     >
       {contextHolder}
+    <Row justify={"center"}>
 
-      <div
-        style={{
-          margin: "50px",
-        }}
-        className="register-form"
-      >
+        <Col xs={24} md={6} >
         <Form.Item<FieldType>
           label="Full Name"
           name="fullname"
@@ -62,7 +59,11 @@ const RegisterPage = () => {
         >
           <Input />
         </Form.Item>
+        </Col>
+    </Row>
 
+    <Row justify={"center"}>
+        <Col xs={24} md={6}>
         <Form.Item<FieldType>
           label="Email"
           name="email"
@@ -70,7 +71,11 @@ const RegisterPage = () => {
         >
           <Input />
         </Form.Item>
+        </Col>
+    </Row>
 
+    <Row justify={"center"}>
+        <Col xs={24} md={6}>
         <Form.Item<FieldType>
           label="Password"
           name="password"
@@ -89,7 +94,11 @@ const RegisterPage = () => {
         >
           <Input.Password />
         </Form.Item>
+        </Col>
+    </Row>
 
+    <Row justify={"center"}>
+        <Col xs={24} md={6}>
         <Form.Item<FieldType>
           label="Phone Number"
           name="phone"
@@ -103,13 +112,23 @@ const RegisterPage = () => {
         >
           <Input />
         </Form.Item>
+        </Col>
+    </Row>
 
+    <Row justify={"center"}>
+        <Col xs={24} md={6}>
         <div>
           <Button onClick={() => form.submit()} type="primary">
             Register
           </Button>
+          {/* <Button onClick={() => {
+            form.setFieldsValue({
+                email: "hoidanit@gmail.com"
+            })
+          }}>Test</Button> */}
         </div>
-      </div>
+        </Col>
+    </Row>
     </Form>
   );
 };
